@@ -1,4 +1,6 @@
 module.exports = {
+  '/charts/chart-heading': require('../../src/charts/chart-heading/example'),
+  '/charts/chart-panel': require('../../src/charts/chart-panel/example'),
   '/charts/wordcloud': require('../../src/charts/wordcloud/example'),
   '/components/alert': require('../../src/components/alert/example'),
   '/components/avatar': require('../../src/components/avatar/example'),
@@ -6,7 +8,6 @@ module.exports = {
   '/components/base': require('../../src/components/base/example'),
   '/components/button': require('../../src/components/button/example'),
   '/components/card': require('../../src/components/card/example'),
-  '/components/chart': require('../../src/components/chart/example'),
   '/components/context': require('../../src/components/context/example'),
   '/components/dialog': require('../../src/components/dialog/example'),
   '/components/dropdown': require('../../src/components/dropdown/example'),

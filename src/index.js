@@ -18,11 +18,6 @@ export { default as Candytar } from './components/avatar/Candytar';
 export { default as Canvas } from './components/platform/Canvas';
 export { default as Card } from './components/card/Card';
 export { default as CardList } from './components/card/CardList';
-export { default as ChartHeading } from './components/chart/ChartHeading';
-export { default as ChartPanel } from './components/chart/ChartPanel';
-export { default as ChartPanelBody } from './components/chart/ChartPanelBody';
-export { default as ChartPanelHeader } from './components/chart/ChartPanelHeader';
-export { default as ChartPanels } from './components/chart/ChartPanels';
 export { default as CheckBox } from './components/form/CheckBox';
 export { default as CheckBoxGroup } from './components/form/CheckBoxGroup';
 export { default as Console } from './components/platform/Console';
@@ -94,6 +89,11 @@ export { default as Underline } from './components/typography/Underline';
 export { default as Weak } from './components/typography/Weak';
 
 // Charts
+export { default as ChartHeading } from './charts/chart-heading/ChartHeading';
+export { default as ChartPanel } from './charts/chart-panel/ChartPanel';
+export { default as ChartPanels } from './charts/chart-panel/ChartPanels';
+export { default as ChartPanelHeader } from './charts/chart-panel/ChartPanelHeader';
+export { default as ChartPanelBody } from './charts/chart-panel/ChartPanelBody';
 export { default as Word } from './charts/wordcloud/Word';
 export { default as WordCloud } from './charts/wordcloud/WordCloud';
 

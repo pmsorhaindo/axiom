@@ -1,7 +1,7 @@
 @import '../../design-patterns/colors/vars';
 @import '../../design-patterns/colors/colors-light';
 @import '../../design-patterns/spacing/vars';
-@import '../vars';
+@import '../../components/vars';
 
 .ax-chart-panel {
   @include theme-light;
