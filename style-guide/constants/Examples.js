@@ -1,4 +1,5 @@
 module.exports = {
+  '/charts/wordcloud': require('../../src/charts/wordcloud/example'),
   '/components/alert': require('../../src/components/alert/example'),
   '/components/avatar': require('../../src/components/avatar/example'),
   '/components/badge': require('../../src/components/badge/example'),

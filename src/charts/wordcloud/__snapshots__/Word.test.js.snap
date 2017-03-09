@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word renders with defaultProps 1`] = `
+<text
+  className="ax-word"
+  style={
+    Object {
+      "fill": undefined,
+      "fontFamily": undefined,
+      "fontSize": undefined,
+      "transform": "translate(0px,0px)",
+    }
+  }
+  textAnchor={undefined}
+/>
+`;

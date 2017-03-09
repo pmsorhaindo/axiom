@@ -93,6 +93,10 @@ export { default as TooltipTarget } from './components/tooltip/TooltipTarget';
 export { default as Underline } from './components/typography/Underline';
 export { default as Weak } from './components/typography/Weak';
 
+// Charts
+export { default as Word } from './charts/wordcloud/Word';
+export { default as WordCloud } from './charts/wordcloud/WordCloud';
+
 // Composites
 export { default as Login } from './composites/login/Login';
 export { default as UserMenu } from './composites/usermenu/UserMenu';
