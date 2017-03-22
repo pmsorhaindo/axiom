@@ -6,6 +6,8 @@
 .ax-chart-panel {
   @include theme-light;
 
+  display: flex;
+  flex-direction: column;
   border-radius: 0.375rem;
   background-color: $color-ui-light-2;
   color: var(--color-context-text);
@@ -18,4 +20,9 @@
 .ax-chart-panel__header,
 .ax-chart-panel__body {
   padding: ($spacing-grid-size * 3) ($spacing-grid-size * 4);
+}
+
+.ax-chart-panel__body {
+  position: relative;
+  flex: 1 1 auto;
 }
