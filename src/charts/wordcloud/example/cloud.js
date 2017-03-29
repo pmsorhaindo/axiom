@@ -10,10 +10,6 @@ export default class WordCloudExample extends Component {
         <Snippet>
           <WordCloud
               height={ 600 }
-              scaleX={ 1.0101009607315063 }
-              scaleY={ 1.0101009607315063 }
-              translateX={ 480 }
-              translateY={ 300 }
               width={ 960 }>
             { wordArray.map((options, key) => <Word key={ key } { ...options } />) }
           </WordCloud>

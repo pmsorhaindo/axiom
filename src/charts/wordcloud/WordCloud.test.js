@@ -2,9 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { WordCloud } from 'bw-axiom';
 
-function getComponent(props = { words: [] }) {
+function getComponent() {
   return renderer.create(
-    <WordCloud { ...props }/>
+    <WordCloud height={ 256 } width={ 256 }/>
   );
 }
 

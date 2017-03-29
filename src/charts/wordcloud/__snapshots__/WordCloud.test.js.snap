@@ -7,9 +7,5 @@ exports[`WordCloud renders with defaultProps 1`] = `
   version="1.1"
   viewBox="0 0 256 256"
   width="100%"
->
-  <g
-    transform="translate(0,0)scale(1,1)"
-  />
-</svg>
+/>
 `;
