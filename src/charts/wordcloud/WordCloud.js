@@ -35,14 +35,15 @@ export default class WordCloud extends Component {
     } = this.props;
     const transform = `translate(${translateX},${translateY})scale(${scaleX},${scaleY})`;
     return (
-      <Base>
-        <svg
-            version="1.1"
-            viewBox={ `0 0 ${width} ${height}` }>
-          <g transform={ transform }>
-            { children }
-          </g>
-        </svg>
+      <Base Component="svg"
+          className="ax-word-cloud"
+          height="100%"
+          version="1.1"
+          viewBox={ `0 0 ${width} ${height}` }
+          width="100%">
+        <g transform={ transform }>
+          { children }
+        </g>
       </Base>
     );
   }

@@ -1,16 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WordCloud renders with defaultProps 1`] = `
-<div
-  className=""
+<svg
+  className="ax-word-cloud"
+  height="100%"
+  version="1.1"
+  viewBox="0 0 256 256"
+  width="100%"
 >
-  <svg
-    version="1.1"
-    viewBox="0 0 256 256"
-  >
-    <g
-      transform="translate(0,0)scale(1,1)"
-    />
-  </svg>
-</div>
+  <g
+    transform="translate(0,0)scale(1,1)"
+  />
+</svg>
 `;
