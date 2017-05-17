@@ -11,7 +11,7 @@ export default class ImageCircle extends Component {
     overlayIconName: PropTypes.string,
     overlayIconSize: PropTypes.string,
     size: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
+    src: PropTypes.string,
     onError: PropTypes.func,
   };
 
