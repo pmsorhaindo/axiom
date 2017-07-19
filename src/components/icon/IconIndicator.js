@@ -9,18 +9,21 @@ export default class IconIndicator extends Component {
     color: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'subtle']),
     name: PropTypes.string.isRequired,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    style: PropTypes.oneOf(['primary', 'secondary']),
   };
 
   static defaultProps = {
     color: 'info',
     size: 'small',
+    style: 'primary',
   };
 
   render() {
-    const { color, name, size, ...rest } = this.props;
+    const { color, name, size, style, ...rest } = this.props;
     const classes = classnames(
       'ax-icon-indicator',
       `ax-icon-indicator--${color}`,
+      `ax-icon-indicator--${style}`,
       `ax-icon-indicator--${size}`
     );
 

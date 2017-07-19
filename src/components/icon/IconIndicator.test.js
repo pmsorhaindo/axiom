@@ -34,4 +34,14 @@ describe('IconIndicator', () => {
       });
     });
   });
+
+  describe('renders with a primary or secondary style', () => {
+    ['primary', 'secondary'].forEach((style) => {
+      it(style, () => {
+        const component = getComponent({ style });
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });
