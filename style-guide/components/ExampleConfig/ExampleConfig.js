@@ -74,9 +74,9 @@ export default class ExampleConfig extends Component {
 
     return (
       <Base className="dm-example">
-        <div className="dm-example__visual">
+        <Base className="dm-example__visual" sticky={ baseState.Base.props.sticky ? undefined : '0rem' } >
           { filterRender(example) }
-        </div>
+        </Base>
 
         <Tabset>
           <Tab title="Properties">

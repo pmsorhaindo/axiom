@@ -32,6 +32,9 @@ export default class Base extends Component {
     hiddenUntil: PropTypes.oneOf(['small', 'medium', 'large']),
     /** Vertical margins given to the element */
     space: PropTypes.oneOf(['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x8']),
+    /** position sticky property */
+    sticky: PropTypes.string,
+    style: PropTypes.object,
     /** Text wrap styling */
     textBreak: PropTypes.oneOf(['all', 'none', 'word']),
     /** Text casing styling */
@@ -101,6 +104,8 @@ export default class Base extends Component {
       className,
       hiddenUntil,
       space,
+      sticky,
+      style,
       textBreak,
       textCase,
       textCenter,
@@ -142,8 +147,10 @@ export default class Base extends Component {
       [`ax-theme--${theme}`]: theme,
     });
 
+    const baseStyles = sticky ? { ...style, position: 'sticky', top: sticky } : style;
+
     return (
-      <Component { ...rest } className={ classes } />
+      <Component { ...rest } className={ classes } style={ baseStyles } />
     );
   }
 }
