@@ -53,7 +53,7 @@ export default class BarChartContext extends PureComponent {
           size={ size } />
     );
 
-    if (ContextComponent) {
+    if (ContextComponent && value > 0) {
       return (
         <Dropdown>
           <DropdownTarget>
