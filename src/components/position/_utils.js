@@ -19,16 +19,15 @@ export const flipOrders = {
   },
 };
 
-export function positionToPlacement(position, offset) {
-  return offset === 'middle' ? position : `${position}-${offset}`;
-}
+export const positionToPlacement = (position, offset) =>
+  offset === 'middle' ? position : `${position}-${offset}`;
 
-export function placementToPosition(placement) {
+export const placementToPosition = (placement) => {
   const [position, offset] = placement.split('-');
   return [position, offset || 'middle'];
-}
+};
 
-export function getPlacementFlipOrder(placement, flip) {
+export const getPlacementFlipOrder = (placement, flip) => {
   const [primary] = placementToPosition(placement);
   return [primary, ...flipOrders[flip][primary]];
-}
+};

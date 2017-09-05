@@ -14,7 +14,7 @@ export default class ChartKey extends Component {
       <Grid { ...rest }
           horizontalAlign="middle"
           responsive={ false }
-          shrink={ true }>
+          shrink>
         { children }
       </Grid>
     );

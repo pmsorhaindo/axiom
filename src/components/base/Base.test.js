@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
 import { Base } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Base { ...props } />
   );
-}
 
 describe('Base', () => {
   it('renders with defaultProps', () => {
@@ -36,12 +35,7 @@ describe('Base', () => {
   });
 
   it('renders functional Component', () => {
-    function CustomComponent() {
-      return (
-        <span />
-      );
-    }
-
+    const CustomComponent = () => <span />;
     const component = getComponent({ Component: CustomComponent });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -2,12 +2,16 @@ import { Children } from 'react';
 
 const isServer = typeof window === 'undefined';
 
-export function findComponent(components, Component) {
+export const findComponent = (components, Component) => {
   const arr = Children.toArray(components);
-  for (let i = 0; i < arr.length; i++) if (arr[i].type === Component) return arr[i];
-}
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].type === Component) {
+      return arr[i];
+    }
+  }
+};
 
-export function getCSSVar(variable, context) {
+export const getCSSVar = (variable, context) => {
   if (isServer) return;
 
   if (!context || context === document) {
@@ -18,9 +22,9 @@ export function getCSSVar(variable, context) {
     .getComputedStyle(context)
     .getPropertyValue(`--${variable}`)
     .trim();
-}
+};
 
-export function svgDefineOnce(html) {
+export const svgDefineOnce = (html) => {
   if (isServer) return;
 
   const SVG_ELEMENT_ID = 'AxiomSvgDefs';
@@ -40,4 +44,4 @@ export function svgDefineOnce(html) {
   if (tempSvg.firstChild && !document.getElementById(tempSvg.firstChild.getAttribute('id'))) {
     svgContainer.querySelector('svg').appendChild(tempSvg.firstChild);
   }
-}
+};

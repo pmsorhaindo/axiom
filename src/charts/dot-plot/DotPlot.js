@@ -18,12 +18,11 @@ import {
 import '../vars.css';
 import './DotPlot.css';
 
-function differenceLineContainerClasses(fromBenchmark, toBenchmark) {
-  return classnames('ax-dot-plot__difference-line-container', {
+const differenceLineContainerClasses = (fromBenchmark, toBenchmark) =>
+  classnames('ax-dot-plot__difference-line-container', {
     'ax-dot-plot__difference-line-container--from-benchmark': fromBenchmark,
     'ax-dot-plot__difference-line-container--to-benchmark': toBenchmark,
   });
-}
 
 export default class DotPlot extends Component {
   static propTypes = {

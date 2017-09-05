@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Grid } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Grid { ...props }>
       <div></div>
     </Grid>
   );
-}
 
 describe('Grid', () => {
   it('renders with defaultProps', () => {

@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Image } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Image src="/image.png" { ...props } />
   );
-}
 
 describe('Image', () => {
   it('renders with defaultProps', () => {

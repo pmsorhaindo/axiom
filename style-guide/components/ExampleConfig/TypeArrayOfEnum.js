@@ -34,7 +34,7 @@ export default class TypeArrayOfEnum extends Component {
     const { required, setValue, value, values } = this.props;
 
     return (
-      <ButtonGroup joined={ true }>
+      <ButtonGroup joined>
         <Button
             disabled={ value === undefined || required }
             onClick={ () => setValue(undefined) }
@@ -54,7 +54,7 @@ export default class TypeArrayOfEnum extends Component {
                 { values.map((val) =>
                   <DropdownMenuItem
                       key={ val }
-                      multiSelect={ true }
+                      multiSelect
                       onClick={ () => setValue(withOrWithout(value, val)) }
                       selected={ isSelected(value, val) }>
                     { val.toString() }

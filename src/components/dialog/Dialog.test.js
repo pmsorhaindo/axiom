@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Dialog } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Dialog { ...props }>
       Lorem ipsum
     </Dialog>
   );
-}
 
 describe('Dialog', () => {
   it('renders with defaultProps', () => {

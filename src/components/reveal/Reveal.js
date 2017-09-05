@@ -85,6 +85,7 @@ export default class Reveal extends Component {
       'ax-reveal--visible': visible,
     });
 
+    /* eslint-disable react/no-find-dom-node */
     return (
       <Base { ...rest }
           className={ classes }
@@ -99,5 +100,6 @@ export default class Reveal extends Component {
         </div>
       </Base>
     );
+    /* eslint-enable react/no-find-dom-node */
   }
 }

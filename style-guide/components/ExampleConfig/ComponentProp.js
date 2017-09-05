@@ -64,7 +64,7 @@ export default class ComponentProp extends Component {
           <GridCell>
             <Grid
                 gutters="small"
-                shrink={ true }
+                shrink
                 space="x2"
                 verticalAlign="middle">
               <GridCell>
@@ -104,7 +104,7 @@ export default class ComponentProp extends Component {
           </GridCell>
 
           { PropEditor && (
-            <GridCell shrink={ true }>
+            <GridCell shrink>
               <PropEditor
                   prop={ prop }
                   propOptions={ propOptions[prop] || {} }

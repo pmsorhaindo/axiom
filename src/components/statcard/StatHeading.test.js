@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { StatHeading } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <StatHeading { ...props }>Lorem</StatHeading>
   );
-}
 
 describe('StatHeading', () => {
   it('renders with defaultProps', () => {

@@ -28,7 +28,12 @@ export default class LogoTab extends Component {
     /* eslint-disable max-len, react/jsx-sort-props */
     return (
       <Logo { ...rest } viewBoxHeight={ viewBoxHeight } viewBoxWidth={ viewBoxWidth }>
-        <svg height="100%" viewBox={ `0 0 ${viewBoxWidth} ${viewBoxHeight}` } width="100%" x="0%" y="0%">
+        <svg
+            height="100%"
+            viewBox={ `0 0 ${viewBoxWidth} ${viewBoxHeight}` }
+            width="100%"
+            x="0%"
+            y="0%">
           <g>
             <polygon fill={ colorMap[color] } points="0 124 100 124 100 0 0 0"></polygon>
             <g transform="translate(13.260870, 25.589655)">

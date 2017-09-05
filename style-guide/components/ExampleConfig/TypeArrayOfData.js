@@ -81,7 +81,7 @@ export default class TypeArrayOf extends Component {
             </DialogBody>
 
             <DialogFooter>
-              <ButtonGroup textRight={ true }>
+              <ButtonGroup textRight>
                 <Button
                     onClick={ () => this.close() }
                     style="secondary">

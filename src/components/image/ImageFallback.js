@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-function cancelable(fn) {
+const cancelable = (fn) => {
   let cancelled;
 
-  function wrapped(...args) {
+  const wrapped = (...args) => {
     if (!cancelled) {
       return fn(...args);
     }
-  }
+  };
 
   wrapped.cancel = () => cancelled = true;
 
   return wrapped;
-}
+};
 
 export default class ImageFallback extends Component {
   static propTypes = {

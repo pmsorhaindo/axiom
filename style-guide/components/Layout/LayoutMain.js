@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classnames from 'classnames';
 
 export default class LayoutMain extends Component {
   static propTypes = {
@@ -12,12 +11,11 @@ export default class LayoutMain extends Component {
   };
 
   render() {
-    const { className, children } = this.props;
+    const { children } = this.props;
     const { hideSidebar } = this.context;
-    const classes = classnames(className, 'dm-layout__main');
 
     return (
-      <div className={ classes } onClick={ hideSidebar }>
+      <div className="dm-layout__main" onClick={ hideSidebar }>
         { children }
       </div>
     );

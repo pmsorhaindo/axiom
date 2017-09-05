@@ -64,11 +64,11 @@ class PositionExample extends Component {
           propTypes={ propTypes }>
         <Position { ...initialProps.Position }>
           <PositionTarget>
-            <Avatar size="4rem" snippetReplace={ true } src="assets/avatar.png" />
+            <Avatar size="4rem" snippetReplace src="assets/avatar.png" />
           </PositionTarget>
 
           <PositionContent>
-            <Context snippetReplace={ true }>
+            <Context snippetReplace>
               <ContextBox>
                 <Heading>
                   <Strong>Current postition:</Strong> { position }

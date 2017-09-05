@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ProgressInfinite } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ProgressInfinite { ...props } />
   );
-}
 
 describe('ProgressInfinite', () => {
   it('renders with defaultProps', () => {

@@ -20,7 +20,7 @@ export default class ChartKeyItem extends Component {
         <Grid { ...rest }
             gutters="tiny"
             responsive={ false }
-            shrink={ true }
+            shrink
             verticalAlign="middle">
           <GridCell>
             { children }

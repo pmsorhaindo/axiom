@@ -55,7 +55,7 @@ class ChartExample extends Component {
                   data={ data }
                   expandButtonSuffix="Categories"
                   labelColumnWidth="11rem"
-                  snippetReplace={ true } />
+                  snippetReplace />
             ),
           }, {
             name: 'With a ProgressInfinite',
@@ -75,7 +75,7 @@ class ChartExample extends Component {
         <Chart { ...initialProps.Chart }>
           <ChartHeader>
             <ChartTitle>
-              <Strong snippetReplace={ true }>Lorem Ipsum</Strong> (dolor sit amet)
+              <Strong snippetReplace>Lorem Ipsum</Strong> (dolor sit amet)
             </ChartTitle>
           </ChartHeader>
           <ChartBody { ...initialProps.ChartBody }>

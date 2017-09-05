@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ButtonGroup, Button } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ButtonGroup { ...props }>
       <Button>Lorem ipsum</Button>
     </ButtonGroup>
   );
-}
 
 describe('ButtonGroup', () => {
   it('renders with defaultProps', () => {

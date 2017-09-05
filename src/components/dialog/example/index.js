@@ -67,11 +67,11 @@ class DialogExample extends Component {
           propTypes={ propTypes }>
         <Dialog { ...initialProps.Dialog }>
           <DialogHeader { ...initialProps.DialogHeader }>
-            <Heading snippetReplace={ true } textSize="headtitle">Dialog Title</Heading>
+            <Heading snippetReplace textSize="headtitle">Dialog Title</Heading>
           </DialogHeader>
 
           <DialogBody { ...initialProps.DialogBody }>
-            <Paragraph snippetReplace={ true }>
+            <Paragraph snippetReplace>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
               arcu tellus. In hac habitasse platea dictumst. Maecenas ac molestie
               arcu. Donec auctor eros quis ex congue, sit amet vehicula sem
@@ -88,7 +88,7 @@ class DialogExample extends Component {
               libero ante eu diam.
             </Paragraph>
 
-            <Paragraph snippetReplace={ true }>
+            <Paragraph snippetReplace>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               convallis, diam dapibus lacinia condimentum, arcu leo blandit arcu,
               vitae convallis diam risus ac ligula. Praesent rhoncus semper odio,
@@ -101,7 +101,7 @@ class DialogExample extends Component {
           </DialogBody>
 
           <DialogFooter { ...initialProps.DialogFooter }>
-            <ButtonGroup snippetReplace={ true }>
+            <ButtonGroup snippetReplace>
               <Button style="primary">Primary</Button>
               <Button style="secondary">Secondary</Button>
             </ButtonGroup>

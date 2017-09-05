@@ -33,21 +33,21 @@ class DataPointExample extends Component {
       <ExampleConfig
           initialProps={ initialProps }
           propTypes={ propTypes }>
-        <Grid shrink={ true } snippetIgnore={ true }>
-          <GridCell snippetIgnore={ true }>
+        <Grid shrink snippetIgnore>
+          <GridCell snippetIgnore>
             <DataPoints { ...initialProps.DataPoints }>
               <DataPoint { ...initialProps.DataPoint } color="blue" />
             </DataPoints>
           </GridCell>
 
-          <GridCell snippetIgnore={ true }>
+          <GridCell snippetIgnore>
             <DataPoints { ...initialProps.DataPoints }>
               <DataPoint { ...initialProps.DataPoint } color="blue" />
               <DataPoint { ...initialProps.DataPoint } color="pink" />
             </DataPoints>
           </GridCell>
 
-          <GridCell snippetIgnore={ true }>
+          <GridCell snippetIgnore>
             <DataPoints { ...initialProps.DataPoints }>
               <DataPoint { ...initialProps.DataPoint } color="blue" />
               <DataPoint { ...initialProps.DataPoint } color="pink" />

@@ -10,13 +10,10 @@ const FORMAT_MAP = {
 
 const longDateWithTimezoneFormat = `${FORMAT_MAP.long} ${FORMAT_MAP.time} ${FORMAT_MAP.timezone}`;
 
-function formatDate (formatStr) {
-  return date => format(date, formatStr);
-}
+const formatDate = (formatStr) => date => format(date, formatStr);
 
-export function filenameDate(date){
-  return `${format(date, 'YYYY-MM-DD')}_at_${format(date, 'HH.mm.ss')}_UTC`;
-}
+export const filenameDate = (date) =>
+  `${format(date, 'YYYY-MM-DD')}_at_${format(date, 'HH.mm.ss')}_UTC`;
 
 export const shortDate = formatDate(FORMAT_MAP.short);
 export const mediumDate = formatDate(FORMAT_MAP.medium);

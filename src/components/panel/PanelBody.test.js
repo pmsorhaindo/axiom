@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { PanelBody } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <PanelBody { ...props }>Lorem Ipsum</PanelBody>
   );
-}
 
 describe('PanelBody', () => {
   it('renders with defaultProps', () => {

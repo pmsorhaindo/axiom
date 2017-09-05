@@ -13,7 +13,7 @@ export default class ColorSwatch extends Component {
     const { colors } = this.props;
 
     return (
-      <Grid fill={ true } horizontalGutters={ false }>
+      <Grid fill horizontalGutters={ false }>
         { colors.map((color) =>
           <GridCell key={ color }>
             <Grid

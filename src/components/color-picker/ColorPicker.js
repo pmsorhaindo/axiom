@@ -112,7 +112,7 @@ export default class ColorPicker extends Component {
                 { options.map(((color)=> {
                   const isColorDisabled = disabledOptions.indexOf(color) !== -1;
                   return (
-                    <GridCell key={ color } shrink={ true }>
+                    <GridCell key={ color } shrink>
                       <ColorPickerOption
                           color={ color }
                           disabled={ isColorDisabled }

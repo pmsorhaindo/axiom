@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ListItem } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ListItem { ...props }>Lorem Ipsum</ListItem>
   );
-}
 
 describe('ListItem', () => {
   it('renders with defaultProps', () => {

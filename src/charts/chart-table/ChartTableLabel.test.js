@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ChartTableLabel from './ChartTableLabel';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChartTableLabel { ...props } width="11rem">
       Lorem Ipsum
     </ChartTableLabel>
   );
-}
 
 describe('ChartTableLabel', () => {
   it('renders with defaultProps', () => {

@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ColumnChartXAxisLabel from './ColumnChartXAxisLabel';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColumnChartXAxisLabel { ...props }>
       Lorem
     </ColumnChartXAxisLabel>
   );
-}
 
 describe('ColumnChartXAxisLabel', () => {
   it('renders with defaultProps', () => {

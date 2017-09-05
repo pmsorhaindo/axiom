@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ChartBody } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChartBody { ...props }>Lorem Ipsum</ChartBody>
   );
-}
 
 describe('ChartBody', () => {
   it('renders with defaultProps', () => {

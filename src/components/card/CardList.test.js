@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { CardList, Card } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <CardList { ...props }>
       <Card>Lorem Ipsum</Card>
     </CardList>
   );
-}
 
 describe('CardList', () => {
   it('renders with defaultProps', () => {

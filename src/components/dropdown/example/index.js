@@ -58,7 +58,7 @@ class DropdownExample extends Component {
           initialPropOptions={ initialPropOptions }
           initialProps={ initialProps }
           propTypes={ propTypes }>
-        <ButtonGroup joined={ true }>
+        <ButtonGroup joined>
           <Button
               style="secondary">Primary Action</Button>
 

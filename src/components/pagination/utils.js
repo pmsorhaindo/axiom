@@ -1,23 +1,19 @@
 const RANGE_BOUNDS_OFFSET = 2;
 
-export function getSetStart(current, range) {
-  return current < range + RANGE_BOUNDS_OFFSET ? 1 :
+export const getSetStart = (current, range) =>
+  current < range + RANGE_BOUNDS_OFFSET ? 1 :
     current - (((current - 1) - RANGE_BOUNDS_OFFSET) % Math.max(1, range - 1));
-}
 
-export function isLargerThanRange(range, total) {
-  return range > 0 && total > range + (RANGE_BOUNDS_OFFSET * 2);
-}
+export const isLargerThanRange = (range, total) =>
+  range > 0 && total > range + (RANGE_BOUNDS_OFFSET * 2);
 
-export function isWithinStartRange(current, range) {
-  return getSetStart(current, range) < range + RANGE_BOUNDS_OFFSET;
-}
+export const isWithinStartRange = (current, range) =>
+  getSetStart(current, range) < range + RANGE_BOUNDS_OFFSET;
 
-export function isWithinEndRange(current, range, total) {
-  return getSetStart(current, range) > total - (range + RANGE_BOUNDS_OFFSET);
-}
+export const isWithinEndRange = (current, range, total) =>
+  getSetStart(current, range) > total - (range + RANGE_BOUNDS_OFFSET);
 
-export function getDisplayRange(current, range, total) {
+export const getDisplayRange = (current, range, total) => {
   const display = [];
   let start = 1;
   let end = total;
@@ -38,4 +34,4 @@ export function getDisplayRange(current, range, total) {
   }
 
   return display;
-}
+};

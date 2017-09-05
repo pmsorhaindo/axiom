@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Tool } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Tool { ...props }>Test</Tool>
   );
-}
 
 describe('Toolbar', () => {
   it('renders', () => {

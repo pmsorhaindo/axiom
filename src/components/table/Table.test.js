@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Table, TableBody } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Table { ...props }>
       <TableBody />
     </Table>
   );
-}
 
 describe('Table', () => {
   it('renders', () => {

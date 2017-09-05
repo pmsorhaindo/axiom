@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ColumnChart, ColumnChartXAxis } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColumnChart
         chartKey={ [{}] } data={ [{ label: 'test', values: [] }] }
         labelColumnWidth="10rem">
@@ -12,7 +12,6 @@ function getComponent(props = {}) {
       </ColumnChartXAxis>
     </ColumnChart>
   );
-}
 
 describe('ColumnChartXAxis', () => {
   it('renders with defaultProps', () => {

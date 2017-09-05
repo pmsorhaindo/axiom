@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { TextArea } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <TextArea { ...props } />
   );
-}
 
 describe('TextArea', () => {
   it('renders with defaultProps', () => {

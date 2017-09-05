@@ -29,7 +29,7 @@ export default class Tab extends Component {
           Component="li"
           className={ classes }
           textSize="small"
-          textStrong={ true }
+          textStrong
           title={ title }>
         <button { ...rest }
             className="ax-tabset__button"

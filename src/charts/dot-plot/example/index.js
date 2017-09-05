@@ -31,10 +31,10 @@ class ContextDemoComponent extends Component {
     return (
       <Context { ...rest } width="17rem">
         <ContextBox>
-          <List inline={ true } textCenter={ true }>
+          <List inline textCenter>
             <ListItem>
               <Grid gutters="tiny" responsive={ false } verticalAlign="middle">
-                <GridCell shrink={ true }>
+                <GridCell shrink>
                   <DataPoints size="1.5rem">
                     { colors.map((color) =>
                       <DataPoint color={ color } key={ color } />
@@ -42,7 +42,7 @@ class ContextDemoComponent extends Component {
                   </DataPoints>
                 </GridCell>
 
-                <GridCell shrink={ true }>
+                <GridCell shrink>
                   <Heading textSize="headline">{ value }%</Heading>
                 </GridCell>
               </Grid>

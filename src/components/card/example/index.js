@@ -43,8 +43,8 @@ class CardExample extends Component {
           propTypes={ propTypes }>
         <CardList { ...initialProps.CardList }>
           <Card { ...initialProps.Card }>
-            <Grid responsive={ false } snippetReplace={ true } verticalAlign="middle">
-              <GridCell shrink={ true }>
+            <Grid responsive={ false } snippetReplace verticalAlign="middle">
+              <GridCell shrink>
                 <Candytar color="lilac" size="4.5rem" />
               </GridCell>
 

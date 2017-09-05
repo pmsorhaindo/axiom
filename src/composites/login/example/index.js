@@ -34,7 +34,7 @@ class LoginExample extends Component {
 
     return (
       <ExampleConfig initialProps={ initialProps } propTypes={ propTypes }>
-        <div snippetIgnore={ true } style={ { height: '30rem' } }>
+        <div snippetIgnore style={ { height: '30rem' } }>
           <Login { ...initialProps.Login } />
         </div>
       </ExampleConfig>

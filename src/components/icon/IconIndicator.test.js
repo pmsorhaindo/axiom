@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { IconIndicator } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <IconIndicator name="twitter" { ...props } />
   );
-}
 
 describe('IconIndicator', () => {
   it('renders with defaultProps', () => {

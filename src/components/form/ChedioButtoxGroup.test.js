@@ -3,14 +3,13 @@ import renderer from 'react-test-renderer';
 import ChedioButtox from './ChedioButtox';
 import ChedioButtoxGroup from './ChedioButtoxGroup';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChedioButtoxGroup { ...props }>
       <ChedioButtox>Lorem ipsum</ChedioButtox>
       <ChedioButtox>Lorem ipsum</ChedioButtox>
     </ChedioButtoxGroup>
   );
-}
 
 describe('ChedioButtoxGroup', () => {
   it('renders with defaultProps', () => {

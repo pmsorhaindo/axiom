@@ -47,9 +47,9 @@ class ToolbarExample extends Component {
 
           <Tool { ...initialProps.Tool }>
             <Toggle
-                disabled={ true }
+                disabled
                 onToggle={ () => {} }
-                toggled={ true } >Toggle</Toggle>
+                toggled >Toggle</Toggle>
           </Tool>
         </Toolbar>
       </ExampleConfig>

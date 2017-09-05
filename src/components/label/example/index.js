@@ -34,7 +34,13 @@ class LabelExample extends Component {
         children: {
           options: [
             { name: 'Text', children: 'Lorem ipsum' },
-            { name: 'Text + Icon', children: ['Dolar amet', <LabelIcon name="cross" />] },
+            {
+              name: 'Text + Icon',
+              children: [
+                'Dolar amet',
+                <LabelIcon key="LabelIcon" name="cross" />,
+              ],
+            },
           ],
         },
       },

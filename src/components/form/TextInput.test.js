@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { TextInput, TextInputIcon } from 'bw-axiom';
 
-function getComponent(props = {}, children = 'Lorem ipsum') {
-  return renderer.create(
+const getComponent = (props = {}, children = 'Lorem ipsum') =>
+  renderer.create(
     <TextInput { ...props }>{ children }</TextInput>
   );
-}
 
 describe('TextInput', () => {
   it('renders with defaultProps', () => {

@@ -26,8 +26,8 @@ class AlertExample extends Component {
     return (
       <ExampleConfig initialProps={ initialProps } propTypes={ propTypes }>
         <Alert { ...initialProps.Alert }>
-          <Grid gutters="small" snippetReplace={ true } verticalAlign="middle">
-            <GridCell shrink={ true }>
+          <Grid gutters="small" snippetReplace verticalAlign="middle">
+            <GridCell shrink>
               <IconIndicator color="subtle" name="warning" />
             </GridCell>
 

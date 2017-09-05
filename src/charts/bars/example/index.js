@@ -31,7 +31,7 @@ class BarsExample extends Component {
 
     return (
       <ExampleConfig initialProps={ initialProps } propTypes={ propTypes }>
-        <div snippetIgnore={ true } style={ { display: 'flex', minHeight: '10rem' } }>
+        <div snippetIgnore style={ { display: 'flex', minHeight: '10rem' } }>
           <Bars { ...initialProps.Bars }>
             <Bar { ...initialProps.Bar } percent={ 0 } />
             <Bar { ...initialProps.Bar } percent={ 25 } />

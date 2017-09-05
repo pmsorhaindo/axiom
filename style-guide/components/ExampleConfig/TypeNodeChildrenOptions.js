@@ -26,7 +26,7 @@ export default class TypeNodeChildrenOptions extends Component {
     const { options, selection } = propOptions;
 
     return (
-      <ButtonGroup joined={ true }>
+      <ButtonGroup joined>
         <Button
             onClick={ () => setOptionValue('selection', undefined) }
             size="small"

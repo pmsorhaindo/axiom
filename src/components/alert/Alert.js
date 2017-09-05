@@ -27,7 +27,7 @@ export default class Alert extends Component {
           </GridCell>
 
           { onRemoveClick && (
-            <GridCell shrink={ true }>
+            <GridCell shrink>
               <Link onClick={ onRemoveClick } style="light">
                 <Icon name="cross" />
               </Link>

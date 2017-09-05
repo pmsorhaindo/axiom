@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { LabelIcon } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <LabelIcon { ...props } name="twitter" />
   );
-}
 
 describe('LabelIcon', () => {
   it('renders with defaultProps', () => {

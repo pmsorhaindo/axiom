@@ -1,4 +1,4 @@
-export function formatData(key, data) {
+export const formatData = (key, data) => {
   const order = key.map(({ color }) => color);
 
   return data.map(({ label, benchmark, values }) => ({
@@ -8,9 +8,9 @@ export function formatData(key, data) {
       .map((color) => ({ color, value: values[color] }))
       .sort((a, b) => order.indexOf(a.color) - order.indexOf(b.color)),
   }));
-}
+};
 
-export function getHighestValue(data) {
+export const getHighestValue = (data) => {
   let max = 0;
 
   for (let i = 0; i < data.length; i++) {
@@ -26,4 +26,4 @@ export function getHighestValue(data) {
   }
 
   return max;
-}
+};

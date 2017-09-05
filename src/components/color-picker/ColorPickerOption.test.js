@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ColorPickerOption } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColorPickerOption { ...props } />
   );
-}
 
 describe('ColorPickerOption', () => {
   it('renders with defaultProps', () => {

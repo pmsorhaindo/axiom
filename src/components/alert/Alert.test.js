@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Alert } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Alert children="Lorem ipsum" { ...props } />
   );
-}
 
 describe('Alert', () => {
   it('renders with defaultProps', () => {

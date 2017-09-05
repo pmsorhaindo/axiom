@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ContextMenu, ContextMenuItem } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ContextMenu { ...props }>
       <ContextMenuItem>Lorem ipsum</ContextMenuItem>
     </ContextMenu>
   );
-}
 
 describe('ContextMenu', () => {
   it('renders with defaultProps', () => {

@@ -2,14 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Menu, MenuItem } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Menu { ...props }>
       <MenuItem>Lorem ipsum</MenuItem>
       <MenuItem>Lorem ipsum</MenuItem>
     </Menu>
   );
-}
 
 describe('Menu', () => {
   it('renders with defaultProps', () => {

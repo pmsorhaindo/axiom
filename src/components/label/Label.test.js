@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Label, LabelIcon } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Label children="Lorem Ipsum" { ...props } />
   );
-}
 
 describe('Label', () => {
   it('renders with defaultProps', () => {
@@ -49,7 +48,7 @@ describe('Label', () => {
     it('adds space to start if first child', () => {
       const component = getComponent({
         children: [
-          <LabelIcon name="twitter" />,
+          <LabelIcon key="LabelIcon" name="twitter" />,
           'Lorem ipsum',
         ],
       });
@@ -61,7 +60,7 @@ describe('Label', () => {
       const component = getComponent({
         children: [
           'Lorem ipsum',
-          <LabelIcon name="twitter" />,
+          <LabelIcon key="LabelIcon" name="twitter" />,
         ],
       });
       const tree = component.toJSON();
@@ -72,7 +71,7 @@ describe('Label', () => {
       const component = getComponent({
         children: [
           'Lorem ipsum',
-          <LabelIcon name="twitter" />,
+          <LabelIcon key="LabelIcon" name="twitter" />,
           'Lorem ipsum',
         ],
       });

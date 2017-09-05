@@ -39,13 +39,11 @@ export default class Layout extends Component {
   }
 
   render() {
-    const { className, children } = this.props;
+    const { children } = this.props;
     const { open } = this.state;
-    const classes = classnames(className,
-      'dm-layout', {
-        'dm-layout--open': open,
-      }
-    );
+    const classes = classnames('dm-layout', {
+      'dm-layout--open': open,
+    });
 
     return (
       <div className={ classes }>

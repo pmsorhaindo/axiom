@@ -3,15 +3,14 @@ import renderer from 'react-test-renderer';
 import { Pagination } from 'bw-axiom';
 import { getDisplayRange, getSetStart, isWithinStartRange, isWithinEndRange } from './utils';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Pagination
         currentPage={ 1 }
         onPageChange={ () => {} }
         totalPages={ 10 }
         { ...props } />
   );
-}
 
 describe('Composite: Pagination', () => {
   it('getSetStart', () => {

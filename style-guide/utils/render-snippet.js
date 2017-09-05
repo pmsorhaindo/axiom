@@ -18,7 +18,6 @@ export function htmlRender(snippet) {
 export function jsxRender(snippet) {
   try {
     return reactElementToJsxString(snippet, {
-      useBooleanShorthandSyntax: false,
       showDefaultProps: false,
       filterProps: ['key', 'space'],
     });

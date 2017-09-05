@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ChartTableAxisTitle from './ChartTableAxisTitle';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChartTableAxisTitle { ...props }>
       Lorem Ipsum
     </ChartTableAxisTitle>
   );
-}
 
 describe('ChartTableAxisTitle', () => {
   it('renders with defaultProps', () => {

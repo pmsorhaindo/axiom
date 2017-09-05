@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ChartKeyItem } from 'bw-axiom';
 
-function getComponent() {
-  return renderer.create(
+const getComponent = () =>
+  renderer.create(
     <ChartKeyItem label="Ipsum">Lorem</ChartKeyItem>
   );
-}
 
 describe('ChartKeyItem', () => {
   it('renders with defaultProps', () => {

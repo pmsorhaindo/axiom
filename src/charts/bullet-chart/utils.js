@@ -1,4 +1,4 @@
-export function formatData(key, data) {
+export const formatData = (key, data) => {
   const order = key.map(({ color }) => color);
   const highestValue = getHighestValue(data);
 
@@ -13,9 +13,9 @@ export function formatData(key, data) {
       }))
       .sort((a, b) => order.indexOf(a.color) - order.indexOf(b.color)),
   }));
-}
+};
 
-export function getHighestValue(data) {
+export const getHighestValue = (data) => {
   let max = 0;
 
   for (let i = 0; i < data.length; i++) {
@@ -27,17 +27,12 @@ export function getHighestValue(data) {
   }
 
   return max;
-}
+};
 
-export function findBarGroupMax ( acc, cur ) {
-  if (cur.value > acc.value) {
-    return cur.value;
-  } else {
-    return acc.value;
-  }
-}
+export const findBarGroupMax =  (acc, cur) =>
+  cur.value > acc.value ? cur.value : acc.value;
 
-export function arrayOfLength (expectedLength, props, propName, componentName) {
+export const arrayOfLength =  (expectedLength, props, propName, componentName) => {
   const arrayPropLength = props[propName].length;
 
   if (arrayPropLength !== expectedLength) {
@@ -46,4 +41,4 @@ export function arrayOfLength (expectedLength, props, propName, componentName) {
       `for prop ${propName} supplied to ${componentName}. Validation failed.`
     );
   }
-}
+};

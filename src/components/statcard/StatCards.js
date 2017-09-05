@@ -12,7 +12,7 @@ export default class StatCards extends Component {
 
     return (
       <Grid { ...rest }
-          fill={ true }
+          fill
           gutters="tiny"
           space="x6">
         { children }

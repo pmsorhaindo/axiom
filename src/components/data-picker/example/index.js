@@ -58,7 +58,7 @@ class DataPickerExample extends Component {
           propTypes={ propTypes }>
         <DataPicker { ...initialProps.DataPicker }>
           <DataPickerHeader>
-            <DropdownMenu snippetReplace={ true }>
+            <DropdownMenu snippetReplace>
               { getData().map(({ id, name }) => (
                 <DropdownMenuItem
                     key={ id }
@@ -70,7 +70,7 @@ class DataPickerExample extends Component {
           </DataPickerHeader>
 
           { selected && (
-            <DataPickerBody snippetSkip={ true }>
+            <DataPickerBody snippetSkip>
               <Heading textSize="headline">{ longNumber(selected.authors) }</Heading>
             </DataPickerBody>
           ) }

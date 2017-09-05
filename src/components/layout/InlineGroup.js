@@ -7,6 +7,7 @@ import './InlineGroup.css';
 export default class InlineGroup extends Component {
   static propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
   }
 
   render() {

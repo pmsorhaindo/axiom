@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Button, ButtonIcon } from 'bw-axiom';
 
-function getComponent(props = {}, children = 'Lorem Ipsum') {
-  return renderer.create(
+const getComponent = (props = {}, children = 'Lorem Ipsum') =>
+  renderer.create(
     <Button { ...props }>{ children }</Button>
   );
-}
 
 describe('Button', () => {
   it('renders with defaultProps', () => {
@@ -69,7 +68,7 @@ describe('Button', () => {
   describe('with ButtonIcon', () => {
     it('adds space to start if first child', () => {
       const component = getComponent({}, [
-        <ButtonIcon name="twitter" />,
+        <ButtonIcon key="ButtonIcon" name="twitter" />,
         'Lorem ipsum',
       ]);
       const tree = component.toJSON();
@@ -79,7 +78,7 @@ describe('Button', () => {
     it('adds space to end if last child', () => {
       const component = getComponent({}, [
         'Lorem ipsum',
-        <ButtonIcon name="twitter" />,
+        <ButtonIcon key="ButtonIcon" name="twitter" />,
       ]);
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
@@ -88,7 +87,7 @@ describe('Button', () => {
     it('adds space all around if middle children', () => {
       const component = getComponent({}, [
         'Lorem ipsum',
-        <ButtonIcon name="twitter" />,
+        <ButtonIcon key="ButtonIcon" name="twitter" />,
         'Lorem ipsum',
       ]);
       const tree = component.toJSON();

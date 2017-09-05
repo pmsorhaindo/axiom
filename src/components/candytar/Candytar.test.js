@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Candytar } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Candytar src="/image/path" { ...props } />
   );
-}
 
 describe('Candytar', () => {
   it('renders with custom size', () => {

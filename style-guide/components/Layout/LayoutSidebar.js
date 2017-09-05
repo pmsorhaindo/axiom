@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import GithubLink from '../GithubLink/GithubLink';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
@@ -10,11 +9,10 @@ export default class LayoutSidebar extends Component {
   };
 
   render() {
-    const { children, className } = this.props;
-    const classes = classnames(className, 'dm-layout__sidebar');
+    const { children } = this.props;
 
     return (
-      <div className={ classes }>
+      <div className="dm-layout__sidebar">
         <div className="dm-layout__sidebar-body">
           { children }
         </div>

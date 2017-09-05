@@ -2,11 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Toggle } from 'bw-axiom';
 
-function onToggle(){}
+const onToggle = () => {};
 
 describe('Toggle', () => {
   it('renders as toggled', () => {
-    const tree = renderer.create(<Toggle onToggle={ onToggle } toggled={ true } />).toJSON();
+    const tree = renderer.create(<Toggle onToggle={ onToggle } toggled />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -18,7 +18,7 @@ describe('Toggle', () => {
   it('renders with disabled', () => {
     const tree = renderer.create(
       <Toggle
-          disabled={ true }
+          disabled
           onToggle={ onToggle }
           toggled={ false } />
     ).toJSON();

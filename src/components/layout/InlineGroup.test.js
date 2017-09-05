@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { InlineGroup } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <InlineGroup { ...props }>Test</InlineGroup>
   );
-}
 
 describe('InlineGroup', () => {
   it('renders with defaultProps', () => {

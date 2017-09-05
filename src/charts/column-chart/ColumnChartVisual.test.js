@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ColumnChartVisual from './ColumnChartVisual';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColumnChartVisual { ...props }>
       Lorem
     </ColumnChartVisual>
   );
-}
 
 describe('ColumnChartVisual', () => {
   it('renders with defaultProps', () => {

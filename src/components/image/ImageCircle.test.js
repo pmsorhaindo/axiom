@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ImageCircle } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ImageCircle { ...props } size="3rem" src="/lorem.jpg" />
   );
-}
 
 describe('ImageCircle', () => {
   it('renders with defaultProps', () => {

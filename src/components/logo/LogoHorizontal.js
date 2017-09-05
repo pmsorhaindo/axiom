@@ -22,7 +22,12 @@ export default class LogoHorizontal extends Component {
           viewBoxHeight={ viewBoxHeight }
           viewBoxWidth={ viewBoxWidth }
           width={ width }>
-        <svg height="100%" viewBox={ `0 0 ${viewBoxWidth} ${viewBoxHeight}` } width="100%" x="0%" y="0%">
+        <svg
+            height="100%"
+            viewBox={ `0 0 ${viewBoxWidth} ${viewBoxHeight}` }
+            width="100%"
+            x="0%"
+            y="0%">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g>
               <g transform="scale(0.478888)">

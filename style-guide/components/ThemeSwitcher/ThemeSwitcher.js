@@ -13,7 +13,7 @@ function setTheme(theme) {
 export default class ThemeSwitcher extends Component {
   render() {
     return (
-      <Paragraph textCenter={ true } textColor="subtle">
+      <Paragraph textCenter textColor="subtle">
         <Link
             onClick={ () => setTheme(THEME_LIGHT) }
             style="subtle">Light </Link>/

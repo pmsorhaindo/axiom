@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ButtonIcon } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ButtonIcon { ...props } name="twitter" />
   );
-}
 
 describe('ButtonIcon', () => {
   it('renders with defaultProps', () => {

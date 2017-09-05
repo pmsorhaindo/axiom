@@ -1,5 +1,5 @@
-export function getData() {
-  return [{
+export const getData = () =>
+  [{
     id: 321,
     name: 'Lorem',
     authors: 71927,
@@ -25,4 +25,3 @@ export function getData() {
     authors: 89101927,
     color: 'chartreuse',
   }];
-}

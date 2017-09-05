@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Stats } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Stats { ...props }>Lorem</Stats>
   );
-}
 
 describe('Stats', () => {
   it('renders with defaultProps', () => {

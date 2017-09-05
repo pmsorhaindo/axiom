@@ -2,14 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { DataPicker } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <DataPicker { ...props }
         placeholder="Lorem ipsum">
       Lorem Ipsum
     </DataPicker>
   );
-}
 
 describe('DataPicker', () => {
   it('renders with defaultProps', () => {

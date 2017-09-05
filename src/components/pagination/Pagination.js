@@ -59,7 +59,7 @@ export default class Pagination extends Component {
           </PaginationButton>,
           <PaginationButton
               circular="small"
-              disabled={ true }
+              disabled
               key="page-first-ellipsis">
             <Icon name="ellipsis" />
           </PaginationButton>,
@@ -80,7 +80,7 @@ export default class Pagination extends Component {
         { showNext && [
           <PaginationButton
               circular="small"
-              disabled={ true }
+              disabled
               key="page-last-ellipsis">
             <Icon name="ellipsis" />
           </PaginationButton>,

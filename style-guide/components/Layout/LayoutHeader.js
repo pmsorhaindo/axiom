@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import { Grid, GridCell, Icon, Link, Heading  } from 'bw-axiom/';
 
 export default class LayoutHeader extends Component {
@@ -13,18 +12,17 @@ export default class LayoutHeader extends Component {
   };
 
   render() {
-    const { className, children } = this.props;
+    const { children } = this.props;
     const { toggleSidebar } = this.context;
-    const classes = classnames(className, 'dm-layout__header');
 
     return (
-      <header className={ classes }>
+      <header className="dm-layout__header">
         <Grid responsive={ false } verticalAlign="middle">
           <GridCell>
             <Heading textSize="headtitle">{ children }</Heading>
           </GridCell>
 
-          <GridCell shrink={ true } visibleUntil="small">
+          <GridCell shrink visibleUntil="small">
             <Link onClick={ toggleSidebar } style="subtle">
               <Icon name="ellipsis" />
             </Link>

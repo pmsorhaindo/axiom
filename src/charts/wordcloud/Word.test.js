@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Word } from 'bw-axiom';
 
-function getComponent(props = { x: 0, y: 0 }) {
-  return renderer.create(
+const getComponent = (props = { x: 0, y: 0 }) =>
+  renderer.create(
     <Word { ...props } />
   );
-}
 
 describe('Word', () => {
   it('renders with defaultProps', () => {

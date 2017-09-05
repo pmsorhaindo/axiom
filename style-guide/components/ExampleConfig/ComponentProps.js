@@ -62,7 +62,7 @@ export default class ComponentProps extends Component {
           ) }
 
           { baseState && component !== 'Base' && (
-            <GridCell shrink={ true }>
+            <GridCell shrink>
               <Link onClick={ () => this.setState({ isBasePropsVisible: !isBasePropsVisible }) }>
                 { isBasePropsVisible ? 'Hide' : 'Show' } { '<Base>' } properties
               </Link>

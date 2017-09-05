@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { DataPoint } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <DataPoint { ...props } />
   );
-}
 
 describe('DataPoint', () => {
   it('renders with defaultProps', () => {

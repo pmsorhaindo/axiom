@@ -2,15 +2,14 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ColumnChart, ColumnChartYAxis } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColumnChart chartKey={ [{}] } data={ [{ label: 'test', values: [] }] }>
       <ColumnChartYAxis { ...props }>
           Lorem
         </ColumnChartYAxis>
     </ColumnChart>
   );
-}
 
 describe('ColumnChartYAxis', () => {
   it('renders with defaultProps', () => {

@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { RadioButton, RadioButtonGroup } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <RadioButtonGroup { ...props }>
       <RadioButton>Lorem ipsum</RadioButton>
     </RadioButtonGroup>
   );
-}
 
 describe('RadioButton', () => {
   it('renders with defaultProps', () => {

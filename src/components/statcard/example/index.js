@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import { ExampleConfig } from 'style-guide';
 import { StatCards, StatCard, StatHeading, Stats, Stat, tinyNumber } from 'bw-axiom';
 
-function randomStatNumber(l = 30000, u = 999999) {
-  return tinyNumber(Math.floor(Math.random() * (u - l + 1) + l), 1);
-}
+const randomStatNumber = (l = 30000, u = 999999) =>
+  tinyNumber(Math.floor(Math.random() * (u - l + 1) + l), 1);
 
 class StatCardsExample extends Component {
   static propTypes = {

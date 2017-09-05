@@ -89,10 +89,10 @@ export default class ChartTableRows extends Component {
             style={ { visibility: collapsible ? 'visible' : 'hidden' } }>
           <Link onClick={ this.toggleReveal } style="subtle">
             <Grid gutters="tiny" responsive={ false } verticalAlign="middle">
-              <GridCell shrink={ true }>
+              <GridCell shrink>
                 <Icon name={ `box-${collapsed ? 'expand' : 'collapse'}` }/>
               </GridCell>
-              <GridCell shrink={ true }>
+              <GridCell shrink>
                 <Strong>
                   { collapsed
                       ? `See All ${children.length} ${expandButtonSuffix}`

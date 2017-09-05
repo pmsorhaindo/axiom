@@ -17,12 +17,9 @@ import {
   Paragraph,
 } from 'bw-axiom';
 
-function stringToColor(string) {
-  return (colors) =>  colors[
-    string.split('').reduce((acc, val) =>acc + val.charCodeAt(), 0)
-      % (colors.length - 1)
-  ];
-}
+const stringToColor = (string) => (colors) =>  colors[
+  string.split('').reduce((acc, val) =>acc + val.charCodeAt(), 0) % (colors.length - 1)
+];
 
 export default class UserMenu extends Component {
   static propTypes = {
@@ -57,7 +54,7 @@ export default class UserMenu extends Component {
           <Context width="auto">
             <ContextBox>
               <Grid gutters="large" responsive={ false } verticalAlign="middle">
-                <GridCell fill={ true }>
+                <GridCell fill>
                   <Heading space="x0" textSize="headtitle">{ firstName } { lastName }</Heading>
                   <Paragraph space="x0" textColor="subtle">{ email }</Paragraph>
                   <ButtonGroup space="x4">
@@ -65,7 +62,7 @@ export default class UserMenu extends Component {
                   </ButtonGroup>
                 </GridCell>
 
-                <GridCell shrink={ true }>
+                <GridCell shrink>
                   <Avatar size="4.5rem" src={ imageSrc }>
                     <Candytar picker={ userColorPicker } size="4.5rem" />
                   </Avatar>

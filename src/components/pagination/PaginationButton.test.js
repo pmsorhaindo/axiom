@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import PaginationButton from './PaginationButton';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <PaginationButton { ...props } />
   );
-}
 
 describe('Composite: PaginationButton', () => {
   it('renders with defaultProps', () => {

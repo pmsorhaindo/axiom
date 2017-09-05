@@ -6,13 +6,13 @@ import './Modal.css';
 
 const bodyOpenClassName = 'ax-modal__body--open';
 
-function enableScrolling() {
+const enableScrolling = () => {
   document.body.classList.remove(bodyOpenClassName);
-}
+};
 
-function disableScrolling() {
+const disableScrolling = () => {
   document.body.classList.add(bodyOpenClassName);
-}
+};
 
 export default class Modal extends Component {
   static propTypes = {

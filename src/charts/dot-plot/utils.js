@@ -1,4 +1,4 @@
-export function formatData(key, data) {
+export const formatData = (key, data) => {
   const order = key.map(({ color }) => color);
 
   return data.map(({ label, benchmark, values }) => ({
@@ -20,9 +20,9 @@ export function formatData(key, data) {
         return acc;
       }, []),
   }));
-}
+};
 
-export function getHighestValue(data) {
+export const getHighestValue = (data) => {
   let max = 0;
 
   for (let i = 0; i < data.length; i++) {
@@ -38,9 +38,9 @@ export function getHighestValue(data) {
   }
 
   return max;
-}
+};
 
-export function getLines(data, benchmark, mouseOverRowIndex, mouseOverColors, rowIndex) {
+export const getLines = (data, benchmark, mouseOverRowIndex, mouseOverColors, rowIndex) => {
   const lines = [];
   const elements = data
     .filter(({ colors }) => mouseOverRowIndex === rowIndex ||
@@ -63,43 +63,36 @@ export function getLines(data, benchmark, mouseOverRowIndex, mouseOverColors, ro
   }
 
   return lines;
-}
+};
 
-export function getDotColors(mouseOverRowIndex, mouseOverColors, rowIndex, colors) {
-  return mouseOverColors.length && colors.length > 1 && mouseOverRowIndex !== rowIndex
+export const getDotColors = (mouseOverRowIndex, mouseOverColors, rowIndex, colors) =>
+  mouseOverColors.length && colors.length > 1 && mouseOverRowIndex !== rowIndex
     ? colors.filter((color) => mouseOverColors.indexOf(color) > -1)
     : colors;
-}
 
-export function isBenchmarkFaded(mouseOverRowIndex) {
-  return mouseOverRowIndex !== -1;
-}
+export const isBenchmarkFaded = (mouseOverRowIndex) => mouseOverRowIndex !== -1;
+export const isLineFaded = (mouseOverRowIndex) => mouseOverRowIndex !== -1;
 
-export function isLineFaded(mouseOverRowIndex) {
-  return mouseOverRowIndex !== -1;
-}
+export const isDotFaded = (mouseOverRowIndex, mouseOverColors, rowIndex, colors) =>
+  isDotHidden(mouseOverRowIndex, mouseOverColors, rowIndex, colors) &&
+    mouseOverRowIndex === rowIndex;
 
-export function isDotFaded(mouseOverRowIndex, mouseOverColors, rowIndex) {
-  return isDotHidden(...arguments) && mouseOverRowIndex === rowIndex;
-}
+export const isDotHidden = (mouseOverRowIndex, mouseOverColors, rowIndex, colors) =>
+  !!mouseOverColors.length && !mouseOverColors.some((color) => colors.indexOf(color) > -1);
 
-export function isDotHidden(mouseOverRowIndex, mouseOverColors, rowIndex, colors) {
-  return !!mouseOverColors.length && !mouseOverColors.some((color) => colors.indexOf(color) > -1);
-}
-
-export function isValueHidden(mouseOverRowIndex, mouseOverColors, rowIndex, colors) {
+export const isValueHidden = (mouseOverRowIndex, mouseOverColors, rowIndex, colors) => {
   if (mouseOverColors.length < 1) {
     return true;
   }
 
   if (mouseOverColors.length === 1) {
-    return isDotHidden(...arguments);
+    return isDotHidden(mouseOverRowIndex, mouseOverColors, rowIndex, colors);
   }
 
   return mouseOverRowIndex !== rowIndex ||
     mouseOverColors.some((color) => colors.indexOf(color) === -1);
-}
+};
 
-export function isValueStrong(mouseOverRowIndex, mouseOverColors, rowIndex) {
-  return mouseOverRowIndex === rowIndex && !isDotHidden(...arguments);
-}
+export const isValueStrong = (mouseOverRowIndex, mouseOverColors, rowIndex, colors) =>
+  mouseOverRowIndex === rowIndex &&
+    !isDotHidden(mouseOverRowIndex, mouseOverColors, rowIndex, colors);

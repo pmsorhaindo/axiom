@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { CheckBox } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <CheckBox { ...props }>Lorem ipsum</CheckBox>
   );
-}
 
 describe('CheckBox', () => {
   it('renders with defaultProps', () => {

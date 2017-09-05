@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Badge } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Badge { ...props }>
       Lorem Ipsum
     </Badge>
   );
-}
 
 describe('Badge', () => {
   it('renders with defaultProps', () => {

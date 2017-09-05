@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { TableCell } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <TableCell { ...props }>
       123456
     </TableCell>
   );
-}
 
 describe('TableBody', () => {
   it('renders', () => {

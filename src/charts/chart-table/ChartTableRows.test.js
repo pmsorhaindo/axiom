@@ -3,15 +3,14 @@ import renderer from 'react-test-renderer';
 import ChartTableRows from './ChartTableRows';
 import ChartTableRow from './ChartTableRow';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChartTableRows { ...props } labelColumnWidth="11rem">
       <ChartTableRow>Lorem</ChartTableRow>
       <ChartTableRow>Lorem</ChartTableRow>
       <ChartTableRow>Lorem</ChartTableRow>
     </ChartTableRows>
   );
-}
 
 describe('ChartTableRows', () => {
   it('renders with defaultProps', () => {

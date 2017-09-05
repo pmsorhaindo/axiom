@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import RadialProgress from './RadialProgress';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <RadialProgress diameter={ 75 } size="small" { ...props } />
   );
-}
 
 describe('RadialProgress', () => {
   it('renders with defaultProps', () => {

@@ -9,15 +9,14 @@ const defaultProps = {
   title: 'Lorem ipsum dolor sit amet',
 };
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChedioButtox
         { ...defaultProps }
         { ...props }>
       Lorem ipsum
     </ChedioButtox>
   );
-}
 
 describe('ChedioButtox', () => {
   it('renders with defaultProps', () => {

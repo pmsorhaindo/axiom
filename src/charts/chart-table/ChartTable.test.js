@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ChartTable from './ChartTable';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ChartTable { ...props }>
       Lorem Ipsum
     </ChartTable>
   );
-}
 
 describe('ChartTable', () => {
   it('renders with defaultProps', () => {

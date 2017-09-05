@@ -78,11 +78,11 @@ export default class BulletChart extends Component {
           </ColumnChartYAxis>
           }
           <ColumnChartVisual>
-            { formattedData.map(({ values, label, subLabel }, index) =>
+            { formattedData.map(({ values, subLabel }, index) =>
               <ColumnChartBars key={ index }>
                 <BulletBars
                     barLabel={ values[labelIndex] && values[labelIndex].valueLabel }
-                    direction= { direction }
+                    direction={ direction }
                     label={ showSubLabel && subLabel }
                     showBarLabel={ showBarLabel }
                     values={ values }>

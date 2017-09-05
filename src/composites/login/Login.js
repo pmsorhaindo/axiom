@@ -93,7 +93,7 @@ export default class Login extends Component {
                   value={ password } />
 
               <Grid space="x4" verticalAlign="middle">
-                <GridCell shrink={ true }>
+                <GridCell shrink>
                   <ButtonGroup>
                     <Button
                         data-ax-at={ atIds.Login.submit }
@@ -104,7 +104,7 @@ export default class Login extends Component {
                 </GridCell>
 
                 <GridCell>
-                  <Paragraph textCenter={ true } textRight="small">
+                  <Paragraph textCenter textRight="small">
                     <Link href="https://app.brandwatch.com/login" target="_blank">
                       <Strong>Forgot login details?</Strong>
                     </Link>

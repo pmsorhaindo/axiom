@@ -35,7 +35,7 @@ export default class MenuItem extends Component {
           Component="li"
           className={ classes }
           textSize={ textSize }
-          textStrong={ true }>
+          textStrong>
         <button { ...rest } className="ax-menu__item-button" disabled={ disabled }>
           { children }
         </button>

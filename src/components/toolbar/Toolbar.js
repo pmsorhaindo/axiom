@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { List } from 'bw-axiom';
 
 export default class Toolbar extends Component {
@@ -11,7 +12,7 @@ export default class Toolbar extends Component {
     const { children } = this.props;
 
     return (
-      <List inline={ true }>
+      <List inline>
         { children }
       </List>
     );

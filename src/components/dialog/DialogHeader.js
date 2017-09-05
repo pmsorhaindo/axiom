@@ -20,7 +20,7 @@ export default class DialogHeader extends Component {
             { children }
           </GridCell>
 
-          <GridCell shrink={ true }>
+          <GridCell shrink>
             <Link onClick={ onRequestClose } style="subtle">
               <Icon name="cross" />
             </Link>

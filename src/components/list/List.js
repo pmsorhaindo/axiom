@@ -8,6 +8,7 @@ export default class List extends Component {
   static propTypes = {
     /** ListItems */
     children: PropTypes.node,
+    className: PropTypes.string,
     /** Styling to place ListItems inline to one another */
     inline: PropTypes.bool,
     /** Switches to a ordered number list */

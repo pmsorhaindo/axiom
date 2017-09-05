@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Bars, Bar } from 'bw-axiom';
 
-function getComponent(props = {}, direction = 'up') {
-  return renderer.create(
+const getComponent = (props = {}, direction = 'up') =>
+  renderer.create(
     <Bars direction={ direction }>
       <Bar color="rose" percent={ 50 } { ...props } />
     </Bars>
   );
-}
 
 describe('Bar', () => {
   it('renders with defaultProps', () => {

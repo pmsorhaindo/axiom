@@ -57,7 +57,7 @@ export default class DataPickerHeader extends Component {
               responsive={ false }
               verticalAlign="middle"
               wrap={ false }>
-            <GridCell shrink={ true }>
+            <GridCell shrink>
               { onSelectColor ? (
                 <ColorPicker
                     colorOptions={ colorOptions }
@@ -77,7 +77,7 @@ export default class DataPickerHeader extends Component {
                     <Link style="subtle">
                       <div className="ax-data-picker__header-title">
                         <div className="ax-data-picker__header-title-text">
-                          <Heading textEllipsis={ true } textSize="headtitle" title={ title }>
+                          <Heading textEllipsis textSize="headtitle" title={ title }>
                             { title }
                           </Heading>
                         </div>
@@ -102,7 +102,7 @@ export default class DataPickerHeader extends Component {
             </GridCell>
 
             { onClear && value && (
-              <GridCell shrink={ true }>
+              <GridCell shrink>
                 <span className="ax-data-picker__header-link">
                   <Link onClick={ onClear }>
                     <Strong><Small textCase="upper">Clear</Small></Strong>

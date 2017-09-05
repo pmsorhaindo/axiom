@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Context } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <Context { ...props }>
       Lorem ipsum
     </Context>
   );
-}
 
 describe('Context', () => {
   it('renders with defaultProps', () => {

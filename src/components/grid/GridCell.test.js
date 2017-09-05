@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { GridCell } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <GridCell { ...props }>
       <div></div>
     </GridCell>
   );
-}
 
 describe('GridCell', () => {
   it('renders with defaultProps', () => {

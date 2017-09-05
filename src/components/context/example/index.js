@@ -84,25 +84,25 @@ class ContextExample extends Component {
           }, {
             name: 'Multiple',
             children: [
-              <ContextMenu>
+              <ContextMenu key="First">
                 <ContextMenuItem>Lorem ipsum dolar</ContextMenuItem>
               </ContextMenu>,
-              <ContextMenu>
-                <ContextMenuItem disabled={ true }>Lorem ipsum dolar</ContextMenuItem>
-                <ContextMenuItem selected={ true }>Lorem ipsum dolar</ContextMenuItem>
+              <ContextMenu key="Second">
+                <ContextMenuItem disabled>Lorem ipsum dolar</ContextMenuItem>
+                <ContextMenuItem selected>Lorem ipsum dolar</ContextMenuItem>
               </ContextMenu>,
-              <ContextBox>
+              <ContextBox key="Third">
                 <Paragraph>Quisque id hendrerit dolor.</Paragraph>
               </ContextBox>,
             ],
           }, {
             name: 'Multiple with Scroll',
             children: [
-              <ContextBox>
+              <ContextBox key="First">>
                 <Heading>Lorem ipsum dolar</Heading>
                 <TextInput value="" />
               </ContextBox>,
-              <DropdownMenu maxHeight="9rem">
+              <DropdownMenu key="Second" maxHeight="9rem">
                 <DropdownMenuItem>Lorem ipsum dolar</DropdownMenuItem>
                 <DropdownMenuItem>Lorem ipsum dolar</DropdownMenuItem>
                 <DropdownMenuItem>Lorem ipsum dolar</DropdownMenuItem>

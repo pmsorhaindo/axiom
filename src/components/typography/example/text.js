@@ -25,7 +25,7 @@ export default class TextExample extends Component {
 
     return (
       <ExampleConfig initialProps={ initialProps } propTypes={ propTypes }>
-        <Heading textSize="display2" textUnderline={ true }>
+        <Heading textSize="display2" textUnderline>
           Display2 / <Text { ...initialProps.Text }>headline</Text>
         </Heading>
       </ExampleConfig>

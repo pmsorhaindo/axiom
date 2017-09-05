@@ -59,13 +59,13 @@ class PanelExample extends Component {
         <Panels>
           <Panel>
             <PanelHeader>
-              <Strong snippetReplace={ true }>Lorem Ipsum</Strong> dolar amor
+              <Strong snippetReplace>Lorem Ipsum</Strong> dolar amor
             </PanelHeader>
 
             <PanelBody>
-              <ProgressInfinite snippetIgnore={ true } />
+              <ProgressInfinite snippetIgnore />
 
-              <Paragraph snippetReplace={ true } textCenter={ true }>
+              <Paragraph snippetReplace textCenter>
                 Quisque varius eros ac sem convallis, at blandit nisl
                 laoreet. Etiam viverra dolor mauris, a aliquam nisi placerat vel.
                 Morbi id accumsan nisi.

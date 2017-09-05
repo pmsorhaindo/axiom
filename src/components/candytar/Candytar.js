@@ -4,9 +4,8 @@ import classnames from 'classnames';
 import './Candytar.css';
 import renderFilter from './_filter';
 
-function defaultPickerFn(colors) {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
+const defaultPickerFn = (colors) =>
+  colors[Math.floor(Math.random() * colors.length)];
 
 const colors = [
   'rose',

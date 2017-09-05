@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ColumnChartRow from './ColumnChartRow';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ColumnChartRow { ...props }>
       Lorem
     </ColumnChartRow>
   );
-}
 
 describe('ColumnChartRow', () => {
   it('renders with defaultProps', () => {

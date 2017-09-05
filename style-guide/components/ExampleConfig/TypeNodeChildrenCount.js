@@ -21,7 +21,7 @@ export default class TypeNodeChildrenCount extends Component {
     } = propOptions;
 
     return (
-      <ButtonGroup joined={ true }>
+      <ButtonGroup joined>
         <Button
             disabled={ count === min }
             onClick={ () => setOptionValue('count', count - 1) }

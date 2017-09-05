@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ContextBox } from 'bw-axiom';
 
-function getComponent(props = {}) {
-  return renderer.create(
+const getComponent = (props = {}) =>
+  renderer.create(
     <ContextBox { ...props }>
       Lorem ipsum
     </ContextBox>
   );
-}
 
 describe('ContextBox', () => {
   it('renders with defaultProps', () => {

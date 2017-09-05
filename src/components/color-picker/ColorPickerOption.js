@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Base } from 'bw-axiom';
 import './ColorPickerOption.css';
@@ -31,7 +32,7 @@ export default class ColorPickerOption extends Component {
 
   static contextTypes = {
     closeDropdown: PropTypes.func,
-  }
+  };
 
   static defaultProps = {
     disabled: false,
