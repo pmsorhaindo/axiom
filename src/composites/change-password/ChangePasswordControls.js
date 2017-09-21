@@ -24,14 +24,14 @@ export default class ChangePasswordControls extends Component {
             onClick={ () => onCancel() }
             style="secondary"
             type="button">
-          Cancel
+          { __('cancel-button') }
         </Button>
         <Button
             data-ax-at={ atIds.ChangePassword.submit }
             disabled={ isSubmitDisabled }
             onClick={ onSubmit }
             type="submit">
-          Change Password
+          { __('change-password-button') }
         </Button>
       </ButtonGroup>
     );

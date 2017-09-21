@@ -25,7 +25,7 @@ export default class ChangePassword extends Component {
      * label and associated pattern.
      */
     rules: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
+      label: PropTypes.func.isRequired,
       pattern: PropTypes.object.isRequired,
     })),
     /** Callback for closing the Dialog by clicking on the overlay */
@@ -37,10 +37,10 @@ export default class ChangePassword extends Component {
   static defaultProps = {
     isSubmitting: false,
     rules: [
-      { label: '8 characters', pattern: /^.{8,}$/ },
-      { label: '1 numeric character', pattern: /^.*[0-9].*$/ },
-      { label: '1 uppercase character', pattern: /^.*[A-Z].*$/ },
-      { label: '1 non-alphanumeric character (e.g. !#%,+-/)', pattern: /^.*[^a-zA-Z\d:].*$/ },
+      { label: __('8-characters'), pattern: /^.{8,}$/ },
+      { label: __('1-numeric-character'), pattern: /^.*[0-9].*$/ },
+      { label: __('1-uppercase-character'), pattern: /^.*[A-Z].*$/ },
+      { label: __('1-non-alphanumeric-character'), pattern: /^.*[^a-zA-Z\d:].*$/ },
     ],
   };
 
@@ -51,7 +51,7 @@ export default class ChangePassword extends Component {
       <Dialog { ...rest } onRequestClose={ onRequestClose } size="medium">
         <DialogHeader>
           <Heading textSize="headtitle">
-            Change Password
+            { __('change-password-title') }
           </Heading>
         </DialogHeader>
 

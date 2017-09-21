@@ -78,7 +78,7 @@ export default class ChangePasswordForm extends Component {
       <Form onSubmit={ onSubmit }>
         <TextInput
             data-ax-at={ atIds.ChangePassword.currentPassword }
-            label="Enter current password"
+            label={ __('enter-current-password') }
             onChange={ e => this.handlePasswordChange('currentPassword', e) }
             space="x6"
             type="password"
@@ -86,7 +86,7 @@ export default class ChangePasswordForm extends Component {
 
         <TextInput
             data-ax-at={ atIds.ChangePassword.newPassword }
-            label="Create new password"
+            label={ __('create-new-password') }
             onChange={ e => this.handlePasswordChange('newPassword', e) }
             space="x2"
             type="password"
@@ -116,7 +116,7 @@ export default class ChangePasswordForm extends Component {
         <TextInput
             data-ax-at={ atIds.ChangePassword.confirmPassword }
             id="confirm-password"
-            label="Confirm new password"
+            label={ __('confirm-new-password') }
             onChange={ e => this.handlePasswordChange('confirmPassword', e) }
             space="x6"
             type="password"

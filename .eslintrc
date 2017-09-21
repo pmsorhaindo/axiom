@@ -4,6 +4,7 @@
     "__BASENAME__": true,
     "__COMPONENT_PROPS__": true,
     "__DEVELOPMENT__": true,
-    "Set": true
+    "Set": true,
+    "__": true
   }
 }
