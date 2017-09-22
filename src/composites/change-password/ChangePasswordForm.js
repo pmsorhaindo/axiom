@@ -14,12 +14,17 @@ import atIds from '../../../at_ids';
 
 export default class ChangePasswordForm extends Component {
 
+  static contextTypes = {
+    t: PropTypes.func,
+  };
+
   static propTypes = {
     isSubmitting: PropTypes.bool.isRequired,
     rules: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
       pattern: PropTypes.object.isRequired,
     })),
+    t: PropTypes.func,
     onCancel: PropTypes.func.isRequired,
     onRequestClose: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
@@ -56,6 +61,7 @@ export default class ChangePasswordForm extends Component {
       onSubmit,
       rules,
       isSubmitting,
+      t,
     } = this.props;
     const { currentPassword, newPassword, confirmPassword } = this.state;
 
@@ -78,7 +84,7 @@ export default class ChangePasswordForm extends Component {
       <Form onSubmit={ onSubmit }>
         <TextInput
             data-ax-at={ atIds.ChangePassword.currentPassword }
-            label="Enter current password"
+            label={ t('enter-current-password') }
             onChange={ e => this.handlePasswordChange('currentPassword', e) }
             space="x6"
             type="password"
@@ -86,7 +92,7 @@ export default class ChangePasswordForm extends Component {
 
         <TextInput
             data-ax-at={ atIds.ChangePassword.newPassword }
-            label="Create new password"
+            label={ t('create-new-password') }
             onChange={ e => this.handlePasswordChange('newPassword', e) }
             space="x2"
             type="password"
@@ -99,7 +105,7 @@ export default class ChangePasswordForm extends Component {
               <List style="none" textColor="subtle">
                 { validatedRules.map(({ label, valid }, id) => (
                   <ListItem key={ id } space="x2">
-                    { label }
+                    { t(label) }
                     <Animicon
                         inline
                         isIn={ valid }
@@ -116,7 +122,7 @@ export default class ChangePasswordForm extends Component {
         <TextInput
             data-ax-at={ atIds.ChangePassword.confirmPassword }
             id="confirm-password"
-            label="Confirm new password"
+            label={ t('confirm-new-password') }
             onChange={ e => this.handlePasswordChange('confirmPassword', e) }
             space="x6"
             type="password"
@@ -126,7 +132,8 @@ export default class ChangePasswordForm extends Component {
         <ChangePasswordControls
             isSubmitDisabled={ !confirmPasswordValid || !currentPasswordValid || isSubmitting }
             onCancel={ onRequestClose }
-            onSubmit={ onSubmit } />
+            onSubmit={ onSubmit }
+            t={ t } />
       </Form>
     );
   }

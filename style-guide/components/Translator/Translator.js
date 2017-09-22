@@ -5,17 +5,21 @@ import { Base } from 'bw-axiom';
 
 class Translator extends Component {
   static childContextTypes = {
-    t: PropTypes.function,
+    t: PropTypes.func.isRequired,
   };
 
   static propTypes = {
     children: PropTypes.node.isRequired,
-    t: PropTypes.func,
+    t: PropTypes.func.isRequired,
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   getChildContext() {
     return {
-      t: this.props.t || (x => { return x; }),
+      t: this.props.t,
     };
   }
 

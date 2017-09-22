@@ -1,3 +1,12 @@
 {
-  "hello-world": "Hallo Welt!"
+  "change-password-title": "Kennwort ändern",
+  "enter-current-password": "Eingeben aktuelles Kennwort",
+  "create-new-password": "Eingeben neues Kennwort",
+  "confirm-new-password": "Bestätigen neues Kennwort",
+  "cancel-button": "Abbrechen",
+  "change-password-button": "Kennwort ändern",
+  "8-characters": "8 Buchstaben",
+  "1-numeric-character": "1 numerischer Begriff",
+  "1-uppercase-character": "1 Großbuchstabe",
+  "1-non-alphanumeric-character": "1 nicht alphanumerisch Buchstabe (e.g. !#%,+-/)"
 }

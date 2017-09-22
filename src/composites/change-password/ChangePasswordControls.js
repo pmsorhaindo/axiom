@@ -10,12 +10,13 @@ export default class ChangePasswordControls extends Component {
 
   static propTypes = {
     isSubmitDisabled: PropTypes.bool.isRequired,
+    t: PropTypes.func,
     onCancel: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
   };
 
   render() {
-    const { onSubmit, onCancel, isSubmitDisabled } = this.props;
+    const { onSubmit, onCancel, isSubmitDisabled, t } = this.props;
 
     return (
       <ButtonGroup textRight>
@@ -24,14 +25,14 @@ export default class ChangePasswordControls extends Component {
             onClick={ () => onCancel() }
             style="secondary"
             type="button">
-          Cancel
+          { t('cancel-button') }
         </Button>
         <Button
             data-ax-at={ atIds.ChangePassword.submit }
             disabled={ isSubmitDisabled }
             onClick={ onSubmit }
             type="submit">
-          Change Password
+          { t('change-password-button') }
         </Button>
       </ButtonGroup>
     );

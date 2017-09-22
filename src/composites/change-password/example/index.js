@@ -4,6 +4,11 @@ import { ExampleConfig } from 'style-guide';
 import { ChangePassword } from 'bw-axiom';
 
 class ChangePasswordExample extends Component {
+
+  static contextTypes = {
+    t: PropTypes.func.isRequired,
+  };
+
   static propTypes = {
     components: PropTypes.shape({
       ChangePassword: PropTypes.object.isRequired,
@@ -12,6 +17,9 @@ class ChangePasswordExample extends Component {
 
   render() {
     const { components } = this.props;
+    const { t } = this.context;
+
+    console.log('ChangePassword Example context', t);
 
     const propTypes = {
       ChangePassword: components.ChangePassword,

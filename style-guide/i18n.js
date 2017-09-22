@@ -8,6 +8,7 @@ i18n
   //.use(Cache)
   //.use(LanguageDetector)
   .init({
+    lng: 'de',
     fallbackLng: 'en',
     react: {
       wait: true,

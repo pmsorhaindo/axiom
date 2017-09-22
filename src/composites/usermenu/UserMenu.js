@@ -32,12 +32,13 @@ export default class UserMenu extends Component {
     imageSrc: PropTypes.string,
     /** User last name */
     lastName: PropTypes.string.isRequired,
+    t: PropTypes.func.isRequired,
     /** Logout handler called when the sign out button is pressed */
     onLogout: PropTypes.func.isRequired,
   };
 
   render() {
-    const { children, firstName, lastName, email, imageSrc, onLogout } = this.props;
+    const { children, firstName, lastName, email, imageSrc, t, onLogout } = this.props;
     const userColorPicker = stringToColor(email);
 
     return (
@@ -58,7 +59,7 @@ export default class UserMenu extends Component {
                   <Heading space="x0" textSize="headtitle">{ firstName } { lastName }</Heading>
                   <Paragraph space="x0" textColor="subtle">{ email }</Paragraph>
                   <ButtonGroup space="x4">
-                    <Button data-tid="logout" onClick={ onLogout }>Sign Out</Button>
+                    <Button data-tid="logout" onClick={ onLogout }>{ t('sign-out') }</Button>
                   </ButtonGroup>
                 </GridCell>
 

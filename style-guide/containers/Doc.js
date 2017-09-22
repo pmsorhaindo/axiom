@@ -22,6 +22,7 @@ export default class Doc extends Component {
     const { props } = findRoute(pathname);
     const { examples, name } = props;
 
+    console.log('examples', examples);
     return (
       <div className="dm-doc">
         <div className="dm-doc__header">

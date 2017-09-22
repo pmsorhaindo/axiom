@@ -13,10 +13,6 @@ import atIds from '../../../at_ids';
 
 export default class ChangePassword extends Component {
 
-  static contextTypes = {
-    t: PropTypes.func,
-  };
-
   static propTypes = {
     /** An error message that will be placed on the page */
     error: PropTypes.string,
@@ -32,6 +28,7 @@ export default class ChangePassword extends Component {
       label: PropTypes.string.isRequired,
       pattern: PropTypes.object.isRequired,
     })),
+    t: PropTypes.func,
     /** Callback for closing the Dialog by clicking on the overlay */
     onRequestClose: PropTypes.func.isRequired,
     /** Submit handler that will be called with old and new password */
@@ -41,22 +38,21 @@ export default class ChangePassword extends Component {
   static defaultProps = {
     isSubmitting: false,
     rules: [
-      { label: '8 characters', pattern: /^.{8,}$/ },
-      { label: '1 numeric character', pattern: /^.*[0-9].*$/ },
-      { label: '1 uppercase character', pattern: /^.*[A-Z].*$/ },
-      { label: '1 non-alphanumeric character (e.g. !#%,+-/)', pattern: /^.*[^a-zA-Z\d:].*$/ },
+      { label: '8-characters', pattern: /^.{8,}$/ },
+      { label: '1-numeric-character', pattern: /^.*[0-9].*$/ },
+      { label: '1-uppercase-character', pattern: /^.*[A-Z].*$/ },
+      { label: '1-non-alphanumeric-character', pattern: /^.*[^a-zA-Z\d:].*$/ },
     ],
   };
 
   render() {
-    const { error, isSubmitting, onRequestClose, onSubmit, rules, ...rest } = this.props;
-    const { t } = this.context;
+    const { error, isSubmitting, onRequestClose, onSubmit, rules, t, ...rest } = this.props;
 
     return (
       <Dialog { ...rest } onRequestClose={ onRequestClose } size="medium">
         <DialogHeader>
           <Heading textSize="headtitle">
-            { t('change-password') }
+            { t('change-password-title') }
           </Heading>
         </DialogHeader>
 
@@ -74,7 +70,8 @@ export default class ChangePassword extends Component {
               onCancel={ onRequestClose }
               onRequestClose={ onRequestClose }
               onSubmit={ onSubmit }
-              rules={ rules } />
+              rules={ rules }
+              t={ t } />
         </DialogBody>
       </Dialog>
     );
