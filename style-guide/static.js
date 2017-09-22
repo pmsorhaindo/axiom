@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { renderToString } from 'react-dom/server';
 import { useRouterHistory, match, RouterContext, Router } from 'react-router';
 import { createMemoryHistory, createHistory } from 'history';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 import routes from './routes';
 import template from './index.ejs';
 import './client.css';
@@ -13,7 +15,9 @@ if (typeof document !== 'undefined') {
   });
 
   render((
-    <Router history={ browserHistory } routes={ routes } />
+    <I18nextProvider i18n={ i18n }>
+      <Router history={ browserHistory } routes={ routes } />
+    </I18nextProvider>
   ), document.getElementById('react-root'));
 }
 

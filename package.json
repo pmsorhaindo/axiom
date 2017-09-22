@@ -35,9 +35,12 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "date-fns": "^1.0.0",
+    "i18next": "^9.0.0",
+    "i18next-xhr-backend": "^1.4.3",
     "lodash.omit": "^4.5.0",
     "popper.js": "^1.12.5",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-i18next": "^5.4.0"
   },
   "peerDependencies": {
     "react": "^15.4.1"

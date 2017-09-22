@@ -13,6 +13,10 @@ import atIds from '../../../at_ids';
 
 export default class ChangePassword extends Component {
 
+  static contextTypes = {
+    t: PropTypes.func,
+  };
+
   static propTypes = {
     /** An error message that will be placed on the page */
     error: PropTypes.string,
@@ -46,12 +50,13 @@ export default class ChangePassword extends Component {
 
   render() {
     const { error, isSubmitting, onRequestClose, onSubmit, rules, ...rest } = this.props;
+    const { t } = this.context;
 
     return (
       <Dialog { ...rest } onRequestClose={ onRequestClose } size="medium">
         <DialogHeader>
           <Heading textSize="headtitle">
-            Change Password
+            { t('change-password') }
           </Heading>
         </DialogHeader>
 

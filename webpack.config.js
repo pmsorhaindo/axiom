@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const generateComponentProps = require('./scripts/component-docs');
 
 const modulesToTranspile = [
@@ -30,6 +31,10 @@ module.exports = {
       template: './style-guide/index.ejs',
       basename: '/',
     }),
+    new CopyWebpackPlugin([{
+      from: './locales',
+      to: './locales',
+    }]),
     new webpack.DefinePlugin({
       __BASENAME__: '"/"',
       __COMPONENT_PROPS__: JSON.stringify(generateComponentProps()),
@@ -39,6 +44,7 @@ module.exports = {
   resolve: {
     alias: {
       'bw-axiom': path.resolve(__dirname, 'src'),
+
       'style-guide': path.resolve(__dirname, 'style-guide/components'),
     },
   },
