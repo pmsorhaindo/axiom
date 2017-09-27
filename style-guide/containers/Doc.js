@@ -7,7 +7,7 @@ import './Doc.css';
 
 export default class Doc extends Component {
   static contextTypes = {
-    axiomLanguage: PropTypes.string.oneOf(['en', 'de', 'es', 'fr']).isRequired,
+    axiomLanguage: PropTypes.oneOf(['en', 'de', 'es', 'fr']).isRequired,
     pathname: PropTypes.string.isRequired,
   };
 

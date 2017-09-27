@@ -13,7 +13,7 @@ export default class App extends Component {
 
   static childContextTypes = {
     pathname: PropTypes.string.isRequired,
-    axiomLanguage: PropTypes.string.oneOf(['en', 'de', 'es', 'fr']).isRequired,
+    axiomLanguage: PropTypes.oneOf(['en', 'de', 'es', 'fr']).isRequired,
   };
 
   constructor(props) {
