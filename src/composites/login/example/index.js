@@ -2,8 +2,13 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ExampleConfig } from 'style-guide';
 import { Login } from 'bw-axiom';
+import { translate as t } from '../../../utils/locales';
 
 class LoginExample extends Component {
+  static contextTypes = {
+    axiomLanguage: PropTypes.oneOf(['en', 'de', 'es', 'fr']),
+  };
+
   static propTypes = {
     components: PropTypes.shape({
       Login: PropTypes.object,
@@ -16,7 +21,7 @@ class LoginExample extends Component {
 
   render() {
     const { components } = this.props;
-
+    const { axiomLanguage } = this.context;
     const propTypes = {
       Login: components.Login,
     };
@@ -25,8 +30,7 @@ class LoginExample extends Component {
       Login: {
         application: 'Axiom',
         backgroundImage: 'assets/axiom-bg.jpg',
-        error: 'Sorry but we don\'t recognise your username and password combination. ' +
-          'Please check your details and try again.',
+        error: t(axiomLanguage, 'sorry-password-error'),
         onSubmit: this.handleSubmit.bind(this),
         theme: 'dark',
       },
