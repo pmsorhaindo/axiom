@@ -1,0 +1,23 @@
+{
+  "change-password-title": "Kennwort ändern",
+  "enter-current-password": "Eingeben aktuelles Kennwort",
+  "create-new-password": "Eingeben neues Kennwort",
+  "confirm-new-password": "Bestätigen neues Kennwort",
+  "cancel-button": "Abbrechen",
+  "change-password-button": "Kennwort ändern",
+  "8-characters": "8 Buchstaben",
+  "1-numeric-character": "1 numerischer Begriff",
+  "1-uppercase-character": "1 Großbuchstabe",
+  "1-non-alphanumeric-character": "1 nicht alphanumerisch Buchstabe (e.g. !#%,+-/)",
+  "settings": "Einstellungen",
+  "help": "Hilfe!",
+  "sign-out": "Ausloggen",
+  "login-title": "Anmeldung",
+  "username": "Benutzername",
+  "password": "Kennwort",
+  "forgot-login": "Kennwort vergessen?",
+  "login-button": "Anmelden",
+  "sorry-password-error": "Sorry, aber wir erkennen nicht Ihre Benutzername und Passwort Kombination. Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut.",
+  "please-select-a-value": "Bitte wähle eine Option",
+  "clear": "Löschen"
+}

@@ -1,0 +1,23 @@
+{
+  "change-password-title": "Changer le mot de passe",
+  "enter-current-password": "Entrez le mot de passe actuel",
+  "create-new-password": "Créer un nouveau mot de passe",
+  "confirm-new-password": "Confirmer le nouveau mot de passe",
+  "cancel-button": "Annuler",
+  "change-password-button": "Changer le mot de passe",
+  "8-characters": "8 caractères",
+  "1-numeric-character": "1 caractère numérique",
+  "1-uppercase-character": "1 caractère majuscule",
+  "1-non-alphanumeric-character": "1 caractère non alphanumérique (par exemple, #%, + - /)",
+  "settings": "Paramètres",
+  "help": "Aidez!",
+  "sign-out": "Déconnexion",
+  "login-title": "S'identifier",
+  "username": "Nom d'utilisateur",
+  "password": "Mot de passe",
+  "forgot-login": "Vous avez oublié vos identifiants?",
+  "login-button": "S'identifier",
+  "sorry-password-error": "Désolé, mais nous ne reconnaissons pas votre nom d'utilisateur et votre mot de passe. Veuillez vérifier vos données et réessayer.",
+  "please-select-a-value": "Veuillez sélectionner une option",
+  "clear": "Clair"
+}
