@@ -11,8 +11,13 @@ import {
   longNumber,
 } from 'bw-axiom';
 import { getData } from './data';
+import { translate as t } from '../../../utils/locales';
 
 class DataPickerExample extends Component {
+  static contextTypes = {
+    axiomLanguage: PropTypes.oneOf(['en', 'de', 'es', 'fr']),
+  };
+
   static propTypes = {
     components: PropTypes.shape({
       DataPicker: PropTypes.object.isRequired,
@@ -31,6 +36,7 @@ class DataPickerExample extends Component {
 
   render() {
     const { components } = this.props;
+    const { axiomLanguage } = this.context;
     const { selectedColor, selectedId } = this.state;
     const selected = getData().filter(({ id }) => id === selectedId)[0];
 
@@ -47,7 +53,7 @@ class DataPickerExample extends Component {
         onClear: () => this.setState({ selectedColor: undefined, selectedId: undefined }),
         onColorPickerOpen: () => {},
         onSelectColor: (color) => this.setState({ selectedColor: color }),
-        placeholder: 'Please select a value',
+        placeholder: t(axiomLanguage, 'please-select-a-value'),
         value: selected && selected.name,
       },
     };
