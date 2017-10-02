@@ -26,7 +26,7 @@ export default class DataPickerHeader extends Component {
     color: PropTypes.string,
     colorOptions: PropTypes.arrayOf(PropTypes.string),
     disabledColors: PropTypes.arrayOf(PropTypes.string),
-    axiomLanguage: PropTypes.string.isRequired,
+    axiomLanguage: PropTypes.string,
     placeholder: PropTypes.string.isRequired,
     onClear: PropTypes.func,
     onColorPickerOpen: PropTypes.func,
