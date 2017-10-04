@@ -22,5 +22,13 @@
   "password": "Contraseña",
   "sign-out": "Cerrar Sesión",
   "username": "Nombre de usuario",
-  "visit-the": "Visita el"
+  "visit-the": "Visita el",
+  "clear": "Borrar",
+  "complete-all-fields": "Lo sentimos, debe completar todos los campos de contraseña",
+  "confirmation-doesnt-match": "Lo sentimos, la confirmación de la contraseña no coincide",
+  "password-must-include": "Lo sentimos que su nueva contraseña debe incluir",
+  "8-characters-error": "al menos 8 caracteres",
+  "1-numeric-character-error": "1 caracter numérico",
+  "1-uppercase-character-error": "1 caracter en mayúscula",
+  "1-non-alphanumeric-character-error": "1 caracter no alfanumérico (ej. !#%,+-/)"
 }

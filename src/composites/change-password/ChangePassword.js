@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import omit from 'lodash.omit';
 import Alert from '../../components/alert/Alert';
 import Dialog from '../../components/dialog/Dialog';
 import DialogBody from '../../components/dialog/DialogBody';
@@ -18,6 +19,8 @@ export default class ChangePassword extends Component {
   static propTypes = {
     /** An error message that will be placed on the page */
     error: PropTypes.string,
+    /** Allows error styles to be applied to the current password text box manually */
+    isCurrentPasswordInvalid:  PropTypes.bool,
     /** Visibility toggle for the Dialog */
     isOpen: PropTypes.bool.isRequired,
     /** Toggles the disabled property on the submit button */
@@ -37,41 +40,80 @@ export default class ChangePassword extends Component {
   };
 
   static defaultProps = {
+    isCurrentPasswordInvalid: false,
     isSubmitting: false,
     rules: [
-      { label: '8-characters', pattern: /^.{8,}$/ },
-      { label: '1-numeric-character', pattern: /^.*[0-9].*$/ },
-      { label: '1-uppercase-character', pattern: /^.*[A-Z].*$/ },
-      { label: '1-non-alphanumeric-character', pattern: /^.*[^a-zA-Z\d:].*$/ },
+      {
+        errorMessage: '8-characters-error',
+        label: '8-characters',
+        pattern: /^.{8,}$/,
+      },
+      {
+        errorMessage: '1-numeric-character-error',
+        label: '1-numeric-character',
+        pattern: /^.*[0-9].*$/,
+      },
+      {
+        errorMessage: '1-uppercase-character-error',
+        label: '1-uppercase-character',
+        pattern: /^.*[A-Z].*$/,
+      },
+      {
+        errorMessage: '1-non-alphanumeric-character-error',
+        label: '1-non-alphanumeric-character',
+        pattern: /^.*[^a-zA-Z\d:].*$/,
+      },
     ],
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      internalError: false,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleError = this.handleError.bind(this);
+  }
+
+  handleError(errorMessage) {
+    this.setState({ internalError: errorMessage });
+  }
+
+  handleSubmit(currentPassword, newPassword) {
+    this.setState({ internalError: false });
+    this.props.onSubmit({ currentPassword, newPassword });
+  }
+
   render() {
-    const { error, isSubmitting, onRequestClose, onSubmit, rules, ...rest } = this.props;
+    const { error, isCurrentPasswordInvalid, isSubmitting, onRequestClose, rules, ...rest } = this.props;
+    const { internalError } = this.state;
     const { axiomLanguage } = this.context;
 
     return (
-      <Dialog { ...rest } onRequestClose={ onRequestClose } size="medium">
+      <Dialog { ...omit(rest, ['onSubmit']) } onRequestClose={ onRequestClose } size="medium">
         <DialogHeader>
           <Heading textSize="headtitle">
             { t(axiomLanguage, 'change-password-title') }
           </Heading>
         </DialogHeader>
 
-        { error && (
-          <Alert space="x4" type="error" >
+        { (internalError || error) && (
+          <Alert type="error">
             <Paragraph data-ax-at={ atIds.ChangePassword.error }>
-              { error }
+              { internalError || error }
             </Paragraph>
           </Alert>
         ) }
 
         <DialogBody>
           <ChangePasswordForm
+              isCurrentPasswordInvalid={ isCurrentPasswordInvalid }
               isSubmitting={ isSubmitting }
               onCancel={ onRequestClose }
+              onError={ this.handleError }
               onRequestClose={ onRequestClose }
-              onSubmit={ onSubmit }
+              onSubmit={ this.handleSubmit }
               rules={ rules } />
         </DialogBody>
       </Dialog>

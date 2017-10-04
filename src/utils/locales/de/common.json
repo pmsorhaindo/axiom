@@ -1,5 +1,5 @@
 {
-  "1-non-alphanumeric-character": "1 Sonderzeichen (e.g. !#%,+-/)",
+  "1-non-alphanumeric-character": "1 Sonderzeichen (z.B. !#%,+-/)",
   "1-numeric-character": "1 Zahl",
   "1-uppercase-character": "1 Großbuchstabe",
   "8-characters": "8 Zeichen",
@@ -22,5 +22,13 @@
   "password": "Passwort",
   "sign-out": "Abmelden",
   "username": "Nutzername",
-  "visit-the": "Besuche den"
+  "visit-the": "Besuche den",
+  "clear": "Löschen",
+  "complete-all-fields": "Es tut uns leid, Sie müssen alle Passwortfelder ausfüllen",
+  "confirmation-doesnt-match": "Entschuldigung, Ihre Passwortbestätigung stimmt nicht überein",
+  "password-must-include": "Entschuldigen Sie bitte Ihr neues Passwort",
+  "8-characters-error": "mindestens 8 Zeichen",
+  "1-numeric-character-error": "1 Zahl",
+  "1-uppercase-character-error": "1 Großbuchstabe",
+  "1-non-alphanumeric-character-error": "1 Sonderzeichen (z.B. !#%,+-/)"
 }

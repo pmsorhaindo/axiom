@@ -2,6 +2,7 @@
 export { default as findComponent } from './utils/findComponent';
 export { default as getCSSVar } from './utils/getCSSVar';
 export { default as isComponent } from './utils/isComponent';
+export { default as listToSentence } from './utils/listToSentence';
 export { default as svgDefineOnce } from './utils/svgDefineOnce';
 
 // Materials
