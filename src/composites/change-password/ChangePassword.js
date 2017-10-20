@@ -2,12 +2,18 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import omit from 'lodash.omit';
 import Alert from '../../components/alert/Alert';
+import Button from '../../components/button/Button';
+import ButtonGroup from '../../components/button/ButtonGroup';
+import ConfirmPasswordInput from '../form-inputs/ConfirmPasswordInput';
+import CurrentPasswordInput from '../form-inputs/CurrentPasswordInput';
 import Dialog from '../../components/dialog/Dialog';
 import DialogBody from '../../components/dialog/DialogBody';
 import DialogHeader from '../../components/dialog/DialogHeader';
+import Form from '../../components/form/Form';
 import Heading from '../../components/typography/Heading';
+import NewPasswordInput from '../form-inputs/NewPasswordInput';
 import Paragraph from '../../components/typography/Paragraph';
-import ChangePasswordForm from './ChangePasswordForm';
+import Validator from '../../components/validate/Validator';
 import atIds from '../../../at_ids';
 import t from '../../utils/locales';
 
@@ -29,60 +35,33 @@ export default class ChangePassword extends Component {
     onRequestClose: PropTypes.func.isRequired,
     /** Submit handler that will be called with old and new password */
     onSubmit: PropTypes.func.isRequired,
-    /**
-     * List of rules which the password must fulfill, contains a human friendly
-     * label and associated pattern.
-     */
-    rules: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      pattern: PropTypes.object.isRequired,
-    })),
   };
 
   static defaultProps = {
     isCurrentPasswordInvalid: false,
     isSubmitting: false,
-    rules: [
-      {
-        errorMessage: '8-characters-error',
-        label: '8-characters',
-        pattern: /^.{8,}$/,
-      },
-      {
-        errorMessage: '1-numeric-character-error',
-        label: '1-numeric-character',
-        pattern: /^.*[0-9].*$/,
-      },
-      {
-        errorMessage: '1-uppercase-character-error',
-        label: '1-uppercase-character',
-        pattern: /^.*[A-Z].*$/,
-      },
-      {
-        errorMessage: '1-non-alphanumeric-character-error',
-        label: '1-non-alphanumeric-character',
-        pattern: /^.*[^a-zA-Z\d:].*$/,
-      },
-    ],
   };
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      internalError: false,
-    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleError = this.handleError.bind(this);
+    this.state = {
+      confirmPassword: '',
+      currentPassword: '',
+      internalError: false,
+      newPassword: '',
+    };
   }
 
-  handleError(errorMessage) {
-    this.setState({ internalError: errorMessage });
-  }
+  handleSubmit(event, getUpdatedValidation) {
+    const { currentPassword, newPassword } = this.state;
+    const isValid = getUpdatedValidation();
 
-  handleSubmit(currentPassword, newPassword) {
-    this.setState({ internalError: false });
-    this.props.onSubmit({ currentPassword, newPassword });
+    event.preventDefault();
+
+    if (isValid) {
+      this.props.onSubmit({ currentPassword, newPassword });
+    }
   }
 
   render() {
@@ -91,39 +70,70 @@ export default class ChangePassword extends Component {
       isCurrentPasswordInvalid,
       isSubmitting,
       onRequestClose,
-      rules,
       ...rest
     } = this.props;
-    const { internalError } = this.state;
+    const { confirmPassword, currentPassword, newPassword } = this.state;
     const { axiomLanguage } = this.context;
 
     return (
-      <Dialog { ...omit(rest, ['onSubmit']) } onRequestClose={ onRequestClose } size="medium">
-        <DialogHeader>
-          <Heading textSize="headtitle">
-            { t(axiomLanguage, 'change-password-title') }
-          </Heading>
-        </DialogHeader>
-
-        { (internalError || error) && (
-          <Alert type="error">
-            <Paragraph data-ax-at={ atIds.ChangePassword.error }>
-              { internalError || error }
-            </Paragraph>
-          </Alert>
-        ) }
-
-        <DialogBody>
-          <ChangePasswordForm
-              isCurrentPasswordInvalid={ isCurrentPasswordInvalid }
-              isSubmitting={ isSubmitting }
-              onCancel={ onRequestClose }
-              onError={ this.handleError }
+      <Validator requiredError={ t(axiomLanguage, 'complete-all-fields') }>
+        { (getUpdatedValidation, validationError) =>
+          <Dialog { ...omit(rest, ['onSubmit']) }
               onRequestClose={ onRequestClose }
-              onSubmit={ this.handleSubmit }
-              rules={ rules } />
-        </DialogBody>
-      </Dialog>
+              size="medium">
+            <DialogHeader>
+              <Heading textSize="headtitle">
+                { t(axiomLanguage, 'change-password-title') }
+              </Heading>
+            </DialogHeader>
+
+            { (validationError || error) && (
+              <Alert type="error">
+                <Paragraph data-ax-at={ atIds.ChangePassword.error }>
+                  { validationError || error }
+                </Paragraph>
+              </Alert>
+            ) }
+
+            <DialogBody>
+              <Form onSubmit={ (e) => this.handleSubmit(e, getUpdatedValidation) }>
+                <CurrentPasswordInput
+                    data-ax-at={ atIds.ChangePassword.currentPassword }
+                    invalid={ isCurrentPasswordInvalid }
+                    onChange={ (e) => this.setState({ currentPassword: e.target.value }) }
+                    value={ currentPassword } />
+
+                <NewPasswordInput
+                    data-ax-at={ atIds.ChangePassword.newPassword }
+                    onChange={ (e) => this.setState({ newPassword: e.target.value }) }
+                    value={ newPassword } />
+
+                <ConfirmPasswordInput
+                    data-ax-at={ atIds.ChangePassword.confirmPassword }
+                    onChange={ (e) => this.setState({ confirmPassword: e.target.value }) }
+                    passwordValue={ newPassword }
+                    value={ confirmPassword } />
+
+                <ButtonGroup textRight>
+                  <Button
+                      data-ax-at={ atIds.ChangePassword.cancel }
+                      onClick={ onRequestClose }
+                      style="secondary"
+                      type="button">
+                    { t(axiomLanguage, 'cancel-button') }
+                  </Button>
+                  <Button
+                      data-ax-at={ atIds.ChangePassword.submit }
+                      disabled={ isSubmitting }
+                      type="submit">
+                    { t(axiomLanguage, 'change-password-button') }
+                  </Button>
+                </ButtonGroup>
+              </Form>
+            </DialogBody>
+          </Dialog>
+        }
+      </Validator>
     );
   }
 }
