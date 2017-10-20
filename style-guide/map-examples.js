@@ -39,6 +39,7 @@ export default {
   '/docs/components/toolbar': require('../src/components/toolbar/example').default,
   '/docs/components/tooltip': require('../src/components/tooltip/example').default,
   '/docs/components/typography': require('../src/components/typography/example').default,
+  '/docs/components/validate': require('../src/components/validate/example').default,
   '/docs/composites/change-password': require('../src/composites/change-password/example').default,
   '/docs/composites/login': require('../src/composites/login/example').default,
   '/docs/composites/logo-page': require('../src/composites/logo-page/example').default,
