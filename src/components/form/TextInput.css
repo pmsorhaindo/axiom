@@ -81,25 +81,25 @@
   border-color: var(--cmp-input-border-color-focused);
 }
 
-.ax-input__container--valid {
-  border-color: var(--cmp-input-border-color-valid);
-}
-
-.ax-input__container--invalid {
-  border-color: var(--cmp-input-border-color-invalid);
-  color: var(--cmp-input-color-invalid);
-
-  & .ax-input::placeholder {
-    color: var(--cmp-input-color-invalid);
-  }
-}
-
 .ax-input__container--overlay {
   border-color: transparent;
   background-color: var(--color-context-background-subtle);
 
   & .ax-input::placeholder {
     color: var(--color-context-text-subtle);
+  }
+}
+
+.ax-input__container--valid:not(.ax-input__container--focused) {
+  border-color: var(--cmp-input-border-color-valid);
+}
+
+.ax-input__container--invalid:not(.ax-input__container--focused) {
+  border-color: var(--cmp-input-border-color-invalid);
+  color: var(--cmp-input-color-invalid);
+
+  & .ax-input::placeholder {
+    color: var(--cmp-input-color-invalid);
   }
 }
 

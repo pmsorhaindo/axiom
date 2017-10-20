@@ -12,11 +12,11 @@
   &:disabled { background-color: var(--cmp-input-background-color-disabled); }
 }
 
-.ax-textarea--valid  {
+.ax-textarea--valid:not(:focus)  {
   border-color: var(--cmp-input-border-color-valid);
 }
 
-.ax-textarea--invalid {
+.ax-textarea--invalid:not(:focus) {
   border-color: var(--cmp-input-border-color-invalid);
   color: var(--cmp-input-color-invalid);
 
