@@ -80,6 +80,9 @@
 .ax-checkbox__label,
 .ax-radio__label {
   margin-left: var(--cmp-chedio-indicator-space);
+  transition-property: color;
+  transition-duration: var(--transition-time-base);
+  transition-timing-function: var(--transition-function);
 }
 
 .ax-checkbox__input:focus + .ax-checkbox__indicator,
@@ -90,6 +93,11 @@
 .ax-checkbox__input:disabled + .ax-checkbox__indicator,
 .ax-radio__input:disabled + .ax-radio__indicator {
   background-color: var(--color-theme-background--disabled);
+}
+
+.ax-checkbox__input:disabled ~ .ax-checkbox__label,
+.ax-radio__input:disabled ~ .ax-radio__label {
+  color: var(--color-theme-text--disabled);
 }
 
 .ax-checkbox--invalid .ax-checkbox__input + .ax-checkbox__indicator,
