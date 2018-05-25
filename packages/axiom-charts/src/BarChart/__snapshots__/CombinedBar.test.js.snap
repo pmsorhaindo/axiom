@@ -2,8 +2,11 @@
 
 exports[`CombinedBar renders a single bar when benchmark value is less than current value 1`] = `
 <div
-  className="ax-bars__bar"
-  onClick={undefined}
+  className="ax-bars__bar ax-bars__bar--clickable"
+  direction="right"
+  onClick={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
   style={
     Object {
       "height": false,
@@ -12,7 +15,7 @@ exports[`CombinedBar renders a single bar when benchmark value is less than curr
   }
 >
   <div
-    className="ax-bars__bar-rect ax-bars__bar-rect--undefined"
+    className="ax-bars__bar-rect ax-bars__bar-rect--giant-leap"
     style={
       Object {
         "height": undefined,
@@ -41,8 +44,11 @@ exports[`CombinedBar renders a single bar when benchmark value is less than curr
 exports[`CombinedBar renders an additional striped bar when benchmark value is grather than current value 1`] = `
 Array [
   <div
-    className="ax-bars__bar"
-    onClick={undefined}
+    className="ax-bars__bar ax-bars__bar--clickable"
+    direction="right"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseMove={[Function]}
     style={
         Object {
             "height": false,
@@ -51,7 +57,7 @@ Array [
     }
 >
     <div
-        className="ax-bars__bar-rect ax-bars__bar-rect--undefined"
+        className="ax-bars__bar-rect ax-bars__bar-rect--giant-leap"
         style={
             Object {
                 "height": undefined,
@@ -85,6 +91,7 @@ Array [
 >
     <div
         className="ax-bars__bar"
+        direction="right"
         onClick={undefined}
         style={
             Object {
@@ -94,7 +101,7 @@ Array [
         }
     >
         <div
-            className="ax-bars__bar-rect ax-bars__bar-rect--undefined"
+            className="ax-bars__bar-rect ax-bars__bar-rect--giant-leap"
             style={
                 Object {
                     "height": undefined,

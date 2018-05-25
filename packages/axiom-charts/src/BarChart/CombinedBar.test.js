@@ -2,9 +2,23 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import CombinedBar from './CombinedBar';
 
-function getComponent(props = {}) {
+function getComponent(newProps = {}) {
+  const props = {
+    DropdownContext: jest.fn(),
+    TooltipContext: jest.fn(),
+    onDropdownClose: jest.fn(),
+    onDropdownOpen: jest.fn(),
+    data: [],
+    color: 'critical-mass',
+    label: 'Possitve',
+    value: 4321,
+    ...newProps,
+  };
+
   return renderer.create(
-    <CombinedBar { ...props } />
+    <CombinedBar { ...props }
+        color="giant-leap"
+        direction="right" />
   );
 }
 

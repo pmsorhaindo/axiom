@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-charts@2.1.2...@brandwatch/axiom-charts@2.2.0) (2018-05-24)
+
+
+### Features
+
+* **BarChart:** Added onToggleRowVisibility action ([a0144bc](https://github.com/HHogg/axiom/commit/a0144bc))
+
+
+
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-charts@2.1.1...@brandwatch/axiom-charts@2.1.2) (2018-05-24)
 

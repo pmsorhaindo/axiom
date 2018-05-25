@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import atIds from '@brandwatch/axiom-automation-testing/ids';
-import { Small } from '@brandwatch/axiom-components';
-import Bar from '../Bar/Bar';
+import { Base, Small } from '@brandwatch/axiom-components';
 import Bars from '../Bar/Bars';
 import CombinedBar from './CombinedBar';
 import BarChartBenchmarkLine from './BarChartBenchmarkLine';
-import ChartContext from '../ChartContext/ChartContext';
 
 export default class BarChartBars extends Component {
   static propTypes = {
@@ -23,6 +21,7 @@ export default class BarChartBars extends Component {
     hoverColor: PropTypes.string,
     hoverIndex: PropTypes.number,
     index: PropTypes.number,
+    isHidden: PropTypes.bool,
     isHovered: PropTypes.bool.isRequired,
     label: PropTypes.node.isRequired,
     lower: PropTypes.number,
@@ -51,6 +50,7 @@ export default class BarChartBars extends Component {
       hideBars,
       hoverColor,
       hoverIndex,
+      isHidden,
       isHovered,
       index,
       label,
@@ -77,7 +77,7 @@ export default class BarChartBars extends Component {
     }
 
     return (
-      <div className={ classes }>
+      <Base className={ classes } cloak={ isHidden }>
         <Bars direction="right">
           { values.map(({ color, value }) => {
             const isFaded = singleSelect
@@ -95,31 +95,26 @@ export default class BarChartBars extends Component {
               left: `${showDifferenceArea && isStretched ? benchmarkValue : percent}%`,
             };
 
-            const FinalBar = showDifferenceArea ? CombinedBar : Bar;
-
             return (
               <div className="ax-bar-chart__bar-container" key={ color }>
-                <ChartContext
+                <CombinedBar
                     DropdownContext={ DropdownContext }
                     TooltipContext={ TooltipContext }
+                    benchmarkValue={ showDifferenceArea ? benchmarkValue : null }
                     color={ color }
                     data={ data }
+                    data-ax-at={ atIds.BarChart.bar }
+                    isFaded={ isFaded }
+                    isHidden={ hideBars && isFaded }
                     label={ label }
                     onDropdownClose={ onDropdownClose }
                     onDropdownOpen={ () => onDropdownOpen(color) }
-                    value={ value }>
-                  <FinalBar
-                      benchmarkValue={ showDifferenceArea ? benchmarkValue : null }
-                      color={ color }
-                      data-ax-at={ atIds.BarChart.bar }
-                      isFaded={ isFaded }
-                      isHidden={ hideBars && isFaded }
-                      onMouseEnter={ () => onMouseEnter(color) }
-                      onMouseLeave={ onMouseLeave }
-                      percent={ percent }
-                      showLabel={ false }
-                      size={ size } />
-                </ChartContext>
+                    onMouseEnter={ () => onMouseEnter(color) }
+                    onMouseLeave={ onMouseLeave }
+                    percent={ percent }
+                    showLabel={ false }
+                    size={ size }
+                    value={ value } />
 
                 <div className={ labelClasses } style={ labelStyle }>
                   <Small textStrong={ isHovered }>{ barLabel ? barLabel({ value, data, color, label }) : value }</Small>
@@ -140,7 +135,7 @@ export default class BarChartBars extends Component {
                 value={ benchmarkValue } />
           </div>
         ) }
-      </div>
+      </Base>
     );
   }
 }
