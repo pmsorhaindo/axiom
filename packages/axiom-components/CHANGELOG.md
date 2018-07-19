@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+      <a name="4.6.0"></a>
+# [4.6.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.5.0...@brandwatch/axiom-components@4.6.0) (2018-07-19)
+
+
+### Features
+
+* **Icon:** adds new instagram icon ([385392b](https://github.com/pmsorhaindo/axiom/commit/385392b))
+
+
+
+
       <a name="4.5.0"></a>
 # [4.5.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.3.0...@brandwatch/axiom-components@4.5.0) (2018-07-18)
 
@@ -19,7 +30,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-      <a name="4.4.0"></a>
+    <a name="4.4.0"></a>
 # [4.4.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.3.0...@brandwatch/axiom-components@4.4.0) (2018-07-18)
 
 
@@ -35,7 +46,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-  <a name="4.3.0"></a>
+<a name="4.3.0"></a>
 # [4.3.0](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-components@4.2.1...@brandwatch/axiom-components@4.3.0) (2018-07-11)
 
 

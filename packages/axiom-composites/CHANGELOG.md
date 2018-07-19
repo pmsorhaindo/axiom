@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.55"></a>
+## [0.0.55](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-composites@0.0.54...@brandwatch/axiom-composites@0.0.55) (2018-07-19)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-composites
+
 <a name="0.0.54"></a>
 ## [0.0.54](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-composites@0.0.52...@brandwatch/axiom-composites@0.0.54) (2018-07-18)
 
